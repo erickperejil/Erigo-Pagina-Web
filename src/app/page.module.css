@@ -228,3 +228,302 @@
     transform: rotate(0deg);
   }
 }
+
+
+.vistaPrincipal{
+  border: 2px solid red;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  
+}
+
+.imagenFondo{
+  height: 100%;
+  width: 100%;
+  border: 2px solid blue;
+  background-image: url("/img/Vivienda_prefabricada.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  background-color: #004ea7;
+  animation: 10s 1 alternate fondoImagen;
+  
+}
+
+@keyframes fondoImagen {
+  from {
+    background-position: bottom;
+  }
+  50% {
+    background-position: center
+  }
+  to {
+    background-position: bottom;
+  }
+}
+
+
+
+.fondoFilter{
+  height: 100%;
+  width: 100%;
+  background-color: #00112478;
+}
+
+.mainFooter{
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
+}
+
+.cardIntroduccion{
+  width: 80%;
+  height: 60%;
+  border-radius: 10px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: 1.2s 1 alternate cardMove;
+  justify-content: center;
+}
+
+@keyframes cardMove {
+  from {
+    top: 25%;
+  }
+  60% {
+    top: 15%;
+  }
+  to {
+    top: 20%;
+  }
+}
+
+
+.introduccionTexto{
+  text-align: center;
+  font-size: 50px;
+  font-family: var(--font-aleo);
+  letter-spacing: -2px;
+}
+
+.introduccionFlecha{
+  position: absolute;
+  /* border: 2px solid red; */
+  height: 10%;
+  top: 46%;
+  width: 6%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.introduccionFlechaDerecha{
+  position: absolute;
+  /* border: 2px solid red; */
+  height: 10%;
+  top: 46%;
+  width: 6%;
+  display: flex;
+  right: 0;
+}
+
+.iconoFlecha{
+  font-size: 20px;
+}
+
+
+.texto{
+  color: black;
+}
+
+.main{
+  border: 4px solid green;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fffffffa;
+  display: flex;
+  flex-direction: column;
+  overflow-y: none;
+}
+
+.tituloNav{
+  height: 65px;
+  width: 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.194) 0%, rgba(255, 255, 255, 0.108) 50%, rgba(255,255,255,0) 100%);
+  padding: 0;
+  display: flex;
+  position: fixed;
+  top: 0;
+
+}
+
+
+.tituloLogo{
+  width: 65px;
+  height: 65px;
+  margin:0;
+  /* border: 2px solid white; */
+  margin-left: 2%;
+}
+
+.tituloTitulo{
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  margin-left: 1%;
+}
+
+.navSegmentos{
+  height: 100%;
+  width: 60%;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.segmento{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, margin 0.5s ease;
+
+  
+}
+
+.segmento:hover{
+  background-color: rgba(255, 255, 255, 0.919);
+  color: #001124;
+  box-shadow: 2px 2px 2px rgb(195, 195, 195);
+  margin: 1px 0 0 -5px;
+  
+  
+}
+
+.segmentoTexto{
+  font-weight: 600;
+  text-align: center;
+}
+
+.erigoLogo{
+  height: 100%;
+  width: 100%;
+}
+
+.navBar{
+  height: 65px;
+  width: 100%;
+  border: 2px solid #EDAA25;
+}
+
+
+.vista2{
+  height: 120vh;
+  width: 100%;
+  border: 3px solid orange
+}
+
+.vista2Titulo{
+  border: 2px solid red;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloVista2{
+ color: #001124;
+ font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.vista2Servicios{
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-evenly;
+}
+
+.vista2ServiciosFila{
+  border: 2px solid red;
+  height: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+.vista2Servicio{
+  border: 2px solid rgb(0, 255, 115);
+  height: 100%;
+  width: 23%;
+  display: flex;
+  
+}
+
+.servicioImagen{
+  background-image: url("/img/Vivienda_prefabricada.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  background-color: #004ea7;
+  
+}
+
+.servicioImagenSombra{
+  height: 100%;
+  width: 100%;
+  background-color: #00112478;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.servicioImagenSombra:hover{
+
+  animation: 5s 1 alternate descripcionHover;
+  
+}
+
+@keyframes descripcionHover {
+  from {
+    background-color: #EDAA25;
+  }
+  to {
+    background-color: #004ea7;
+  }
+}
+
+.servicioDescripcion{
+  height: 18%;
+  width: 100%;
+  background-color: #ffffffe4;
+}
+
+
+
+.descripcionH2{
+  color: #001124;
+  text-align: center;
+}
+
+.descripcionH3{
+  color: #001124;
+  font-size: 16px;
+}
+
