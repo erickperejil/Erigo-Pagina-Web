@@ -467,10 +467,12 @@
 }
 
 .vista2Servicio{
-  border: 2px solid rgb(0, 255, 115);
+  /* border: 2px solid rgb(0, 255, 115); */
   height: 100%;
-  width: 23%;
+  width: 21%;
   display: flex;
+  box-shadow: 9px 13px 20px #00000078;
+  border-radius: 15px;
   
 }
 
@@ -482,6 +484,7 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; 
   background-color: #004ea7;
+  border-radius: 15px;
   
 }
 
@@ -492,38 +495,39 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+  border-radius: 15px;
 }
 
-.servicioImagenSombra:hover{
 
-  animation: 5s 1 alternate descripcionHover;
-  
-}
 
-@keyframes descripcionHover {
-  from {
-    background-color: #EDAA25;
-  }
-  to {
-    background-color: #004ea7;
-  }
-}
+
 
 .servicioDescripcion{
-  height: 18%;
   width: 100%;
-  background-color: #ffffffe4;
+  background-color: #004ea70f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
 
 .descripcionH2{
-  color: #001124;
+  color: #ffffff;
   text-align: center;
+  font-size: 22px;
 }
 
 .descripcionH3{
-  color: #001124;
-  font-size: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 14px;
+  margin-right: 14px;
+  text-align: left;
 }
 
+.vistaDato{
+  height: 60vh;
+  width: 100%;
+  border: 2px solid purple;
+}
