@@ -32,10 +32,10 @@ const serviciosIconos = [
 ];
 
 const serviciosIconosHover = [
-  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#065569" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#065569" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#065569" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#EDAA25" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#EDAA25" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#EDAA25" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#EDAA25" }} />,
 ];
   
 
