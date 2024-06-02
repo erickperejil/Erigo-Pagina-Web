@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 const servicios = [
@@ -17,8 +17,20 @@ const servicios = [
   {
     titulo: "Construcción de obras civiles",
     descripcion: " somos especialistas en la construcción de obras civiles de todo tipo, desde pequeñas infraestructuras hasta grandes proyectos urbanos e industriales, ofreciendo soluciones integrales y personalizadas para cada cliente."
+  },
+  {
+    titulo: "Diseño y planificación",
+    descripcion: "contamos con un equipo altamente capacitado para el diseño y planificación de proyectos civiles, utilizando tecnologías de última generación para garantizar la calidad y eficiencia en cada etapa del proyecto."
   }
-];
+  ]
+
+  const serviciosIconos = [
+    <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} style={{ color: "#065569" }} />,
+    <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} style={{ color: "#065569" }} />,
+    <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} style={{ color: "#065569" }} />,
+    <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} style={{ color: "#065569" }} />,
+  ];
+  
 
 export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -81,32 +93,41 @@ export default function Home() {
         <div className={styles.mainFooter}></div>
       </section>
 
-      <div className={styles.vistaDato}></div>
+      <div className={styles.vistaDato}>
+        <div className={styles.datoFooter}></div>
+        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto} style={{fontSize:'35px'}}>Desde su fundación, hemos trabajado en una gran variedad de proyectos, desde pequeñas obras de construcción hasta grandes infraestructuras, nos comprometemos con la excelencia y la satisfacción del cliente. </h2> <br /> <h2 className={styles.introduccionTexto} style={{fontSize:'50px'}}>Juntos construimos el futuro</h2></div>
+      </div>
 
       <div className={styles.vista2}>
         <div className={styles.vista2Titulo}>
           <h1 className={styles.tituloVista2}>Nuestros Servicios</h1>
         </div>
         <div className={styles.vista2Servicios}>
+          <div className={styles.serviciosIconos}></div>
           <div className={styles.vista2ServiciosFila}>
             {servicios.map((servicio, index) => (
-              <div key={index} className={styles.vista2Servicio}>
-                <div className={styles.servicioImagen}>
-                  <div
-                    className={styles.servicioImagenSombra}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <div className={styles.servicioDescripcion} style={{
-                      height: hoveredIndex === index ? '100%' : '100%',
-                      transition: 'height 1s',
-                    }}>
-                      <div style={{ height: hoveredIndex === index ? '12%' : '90%', transition: 'height 1s' }}></div>
-                      <h2 className={styles.descripcionH2} style={{ height: hoveredIndex === index ? '10%' : '0%', transition: 'height 1s' }}>{servicio.titulo}</h2>
-                      <br />
-                      <h3 className={styles.descripcionH3} style={{marginTop: hoveredIndex === index ? (index === 2 ? '5%' : '-10px') : '30px', height: hoveredIndex === index ? '78%' : '0%', transition: 'margin-top 1s, height 1s' }}>
-                        {servicio.descripcion}
-                      </h3>
+              <div className={styles.servicioContenedor}>
+                <div className={styles.servicioIcono}>
+                  {serviciosIconos[index]};
+                </div>
+                <div key={index} className={styles.vista2Servicio}>
+                  <div className={styles.servicioImagen}>
+                    <div
+                      className={styles.servicioImagenSombra}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <div className={styles.servicioDescripcion} style={{
+                        height: hoveredIndex === index ? '100%' : '100%',
+                        transition: 'height 1s',
+                      }}>
+                        <div style={{ height: hoveredIndex === index ? '12%' : '90%', transition: 'height 1s' }}></div>
+                        <h2 className={styles.descripcionH2} style={{ height: hoveredIndex === index ? '10%' : '0%', transition: 'height 1s' }}>{servicio.titulo}</h2>
+                        <br />
+                        <h3 className={styles.descripcionH3} style={{marginTop: hoveredIndex === index ? (index === 2 ? '5%' : '-10px') : '30px', height: hoveredIndex === index ? '78%' : '0%', transition: 'margin-top 1s, height 1s' }}>
+                          {servicio.descripcion}
+                        </h3>
+                      </div>
                     </div>
                   </div>
                 </div>

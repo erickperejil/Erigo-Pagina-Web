@@ -231,7 +231,7 @@
 
 
 .vistaPrincipal{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 100vh;
   width: 100%;
   display: flex;
@@ -241,7 +241,7 @@
 .imagenFondo{
   height: 100%;
   width: 100%;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   background-image: url("/img/Vivienda_prefabricada.jpg");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -276,7 +276,7 @@
   bottom: 0;
   height: 10%;
   width: 100%;
-  background-color: white;
+  background-color: #065569ff;
   clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
 }
 
@@ -341,7 +341,7 @@
 }
 
 .main{
-  border: 4px solid green;
+  /* border: 4px solid green; */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -423,7 +423,7 @@
 .navBar{
   height: 65px;
   width: 100%;
-  border: 2px solid #EDAA25;
+  /* border: 2px solid #EDAA25; */
 }
 
 
@@ -434,57 +434,69 @@
 }
 
 .vista2Titulo{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 80px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 4%;
+}
+
+.tituloVista2{
+ color: #065569ff;
+ font-size: 40px;
+ font-family: var(--font-aleo);
+ letter-spacing: -1px;
+ font-weight: bolder;
+}
+
+.vista2Servicios{
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: flex-start;
+}
+
+.vista2ServiciosFila{
+  /* border: 2px solid red; */
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  
+}
+
+.servicioIcono{
+  width: 100%;
+  height: 20%;
+  /* border: 2px solid greenyellow; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.tituloVista2{
- color: #001124;
- font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.vista2Servicios{
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  justify-content: space-evenly;
-}
-
-.vista2ServiciosFila{
-  border: 2px solid red;
-  height: 45%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  
-}
-
 .vista2Servicio{
   /* border: 2px solid rgb(0, 255, 115); */
-  height: 100%;
-  width: 21%;
+  height: 80%;
+  width: 100%;
   display: flex;
-  box-shadow: 9px 13px 20px #00000078;
   border-radius: 15px;
   
 }
 
 .servicioImagen{
-  background-image: url("/img/Vivienda_prefabricada.jpg");
+  background-image: url("/img/Imagen1.jpg");
   height: 100%;
   width: 100%;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; 
   background-color: #004ea7;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   
 }
 
@@ -495,7 +507,7 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
 }
 
 
@@ -529,5 +541,40 @@
 .vistaDato{
   height: 60vh;
   width: 100%;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
+  background-color:#065569ff;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.datoFooter{
+  width: 100%;
+  height: 50px;
+  /* border: 2px solid black; */
+  clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
+  background-color: white;
+}
+
+.datoLeft{
+  /* border: 2px solid gold;  */
+  height: 80%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0%;
+}
+
+.servicioContenedor{
+  height: 100%;
+  width: 21%;
+  display: flex;
+  flex-direction: column-reverse;
+  box-shadow: 9px 13px 20px #00000078;
+  border-radius: 15px;
+}
+
+.iconoService{
+height: 70%;
 }
