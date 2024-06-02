@@ -24,12 +24,19 @@ const servicios = [
   }
   ]
 
-  const serviciosIconos = [
-    <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} style={{ color: "#065569" }} />,
-    <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} style={{ color: "#065569" }} />,
-    <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} style={{ color: "#065569" }} />,
-    <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} style={{ color: "#065569" }} />,
-  ];
+const serviciosIconos = [
+  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety}  style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting}  style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard}  style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck}  style={{ color: "#065569" }} />,
+];
+
+const serviciosIconosHover = [
+  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#065569" }} />,
+];
   
 
 export default function Home() {
@@ -106,17 +113,15 @@ export default function Home() {
           <div className={styles.serviciosIconos}></div>
           <div className={styles.vista2ServiciosFila}>
             {servicios.map((servicio, index) => (
-              <div className={styles.servicioContenedor}>
+              <div className={styles.servicioContenedor}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}>
                 <div className={styles.servicioIcono}>
-                  {serviciosIconos[index]};
+                  {hoveredIndex === index ? serviciosIconosHover[index] : serviciosIconos[index]}
                 </div>
                 <div key={index} className={styles.vista2Servicio}>
                   <div className={styles.servicioImagen}>
-                    <div
-                      className={styles.servicioImagenSombra}
-                      onMouseEnter={() => handleMouseEnter(index)}
-                      onMouseLeave={handleMouseLeave}
-                    >
+                    <div className={styles.servicioImagenSombra}>
                       <div className={styles.servicioDescripcion} style={{
                         height: hoveredIndex === index ? '100%' : '100%',
                         transition: 'height 1s',

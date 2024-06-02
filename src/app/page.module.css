@@ -360,6 +360,7 @@
   display: flex;
   position: fixed;
   top: 0;
+  z-index: 1000;
 
 }
 
@@ -577,4 +578,11 @@
 
 .iconoService{
 height: 70%;
+--fa-bounce-rebound: 1;
+--fa-animation-iteration-count:1;
+}
+
+.iconoServiceBounce {
+  height: 70%;
+  --fa-animation-iteration-count:1;
 }
