@@ -273,7 +273,7 @@
 
 .mainFooter{
   position: absolute;
-  bottom: 0;
+  bottom: -1%;
   height: 10%;
   width: 100%;
   background-color: #065569ff;
@@ -345,7 +345,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #fffffffa;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   overflow-y: none;
@@ -361,6 +361,7 @@
   position: fixed;
   top: 0;
   z-index: 1000;
+  overflow-y: hidden;
 
 }
 
@@ -429,19 +430,21 @@
 
 
 .vista2{
-  height: 120vh;
+  height: 100vh;
   width: 100%;
-  border: 3px solid orange
+  /* border: 3px solid orange */
 }
 
 .vista2Titulo{
   /* border: 2px solid red; */
-  height: 80px;
+  height: 10%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-left: 4%;
+  position: relative;
+  top: 4%;
 }
 
 .tituloVista2{
@@ -457,12 +460,12 @@
   display: flex;
   flex-direction: column;
   height: 90%;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .vista2ServiciosFila{
   /* border: 2px solid red; */
-  height: 60%;
+  height: 68%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -529,6 +532,7 @@
   color: #ffffff;
   text-align: center;
   font-size: 22px;
+  margin-bottom: 1%;
 }
 
 .descripcionH3{
@@ -554,6 +558,8 @@
   /* border: 2px solid black; */
   clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
   background-color: white;
+  position: absolute;
+  bottom: -61%;
 }
 
 .datoLeft{
@@ -578,11 +584,108 @@
 
 .iconoService{
 height: 70%;
---fa-bounce-rebound: 1;
 --fa-animation-iteration-count:1;
+--fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1;
 }
 
 .iconoServiceBounce {
   height: 70%;
   --fa-animation-iteration-count:1;
+}
+
+.division2{
+  height: 60vh;
+  width: 100%;
+  background-color: #065569ff;
+
+}
+
+.obrasCiviles{
+  height: 420vh;
+  width: 100%;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.obraTipo{
+  height: 70vh;
+  width: 100%;
+  border: 2px solid orange;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.obraImagen{
+  width: 50%;
+  height: 100%;
+  border: 2px solid darkslategrey;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.obraImagenInverse{
+  width: 50%;
+  height: 100%;
+  border: 2px solid darkslategrey;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.obraDescripcion{
+  width: 50%;
+  height: 100%;
+  border: 2px solid seagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.imagenEspacio, .imagenEspacioInverse{
+  clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
+  height: 90%;
+  width: 90%;
+  background-image: url(/img/Vivienda_prefabricada.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #001124;
+  overflow: hidden;
+}
+
+.imagenEspacioInverse{
+    clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 88%);
+    border-radius: 0% 15% 15% 0%;
+}
+
+.imagenEspacio{
+  clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
+  border-radius: 15% 0% 0 15%;
+}
+
+.obraTexto{
+  width: 90%;
+  height: 70%;
+  border: 2px solid red;
+}
+
+.textoObraTitulo{
+  color: #065569ff;
+  height: 10%;
+  font-size: 4vh;
+}
+
+.textoObraDescripcion{
+  color: #000000;
+  height: 90%;
+  padding-top: 25px;
+  font-size: 3vh;
+  letter-spacing: 0.4px;
+  font-weight: 400;
 }

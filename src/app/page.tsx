@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import { relative } from "path";
 
 const servicios = [
   {
@@ -139,7 +140,48 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className={styles.mainFooter} style={{bottom:'-1%', position: 'relative'}}></div>
         </div>
+        
+      </div>
+
+      <div className={styles.division2}>
+      <div className={styles.datoFooter} style={{position: 'relative',top: '90%'}}></div>
+      <div className={styles.datoLeft}><h2 className={styles.introduccionTexto} style={{fontSize:'35px',    position: 'relative',top: '-9%'}}> Hemos trabajado en una variedad de proyectos, desde pequeñas infraestructuras hasta grandes proyectos urbanos e industriales, brindando soluciones integrales y personalizadas para cada cliente </h2> </div>
+      </div>
+
+      <div className={styles.obrasCiviles}>
+            <div className={styles.obraTipo}>
+              <div className={styles.obraDescripcion}>
+                <div className={styles.obraTexto}>
+                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                </div>
+              </div>
+              <div className={styles.obraImagen}>
+                <div className={styles.imagenEspacio}></div>
+              </div>
+            </div>
+
+            <div className={styles.obraTipo}>
+            <div className={styles.obraImagenInverse}>
+              <div className={styles.imagenEspacioInverse}></div>
+            </div>
+            <div className={styles.obraDescripcion}>
+                <div className={styles.obraTexto}>
+                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                </div>
+            </div>
+            </div>
+
+            <div className={styles.obraTipo}></div>
+            <div className={styles.obraTipo}></div>
+            <div className={styles.obraTipo}></div>
+            <div className={styles.obraTipo}></div>
+
       </div>
     </main>
   );
