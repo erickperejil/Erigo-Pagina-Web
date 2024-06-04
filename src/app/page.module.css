@@ -689,3 +689,165 @@ height: 70%;
   letter-spacing: 0.4px;
   font-weight: 400;
 }
+
+.contacto{
+  height: 80vh;
+  width: 100%;
+  border: 2px solid #001124;
+  background-color: #065569ff;
+}
+
+.contactoInfo{
+  width: 100%;
+  height: 60%;
+  border: 2px solid steelblue;
+  display: flex;
+  align-items: flex-end;
+}
+
+.horarios{
+ width: 50%;
+ height: 90%;
+ border: 2px solid red;
+ padding: 4vh 7vh;
+
+}
+
+.horariosFecha{
+  border: 2px solid pink;
+  display: flex;
+}
+
+.horariosDia{
+  width: 50%;
+  border: 2px solid pink;
+}
+.horariosHora{
+  width: 50%;
+  border: 2px solid pink;
+}
+
+.info{
+  width: 50%;
+  height: 90%;
+  border: 2px solid red;
+  padding: 4vh 7vh;
+}
+
+.horariosH2{
+  border: 2px solid blue;
+  margin-bottom: 10px;
+}
+
+.iconosContactos{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.iconosContactosIconos{
+  font-size: 3.5vh;
+  
+}
+
+.redesSociales{
+  width: 100%;
+  height: 40%;
+  border: 2px solid green;
+}
+
+.contenedorIcono{
+  border: 2px solid hotpink;
+  height: 100%;
+  width:  9vh;
+  margin: 0 2px;
+}
+
+.dibujoBonito{
+  border: 2px solid firebrick;
+  height: 39vh;
+  width: 32%;
+  position: relative;
+  /*; cambiar a -7vh */
+  top: -8vh;
+  display: flex;
+}
+
+.paredIzq{
+  height: 80%;
+  width: 60%;
+  background-color: #CFF5FF;
+  clip-path: polygon(0 0, 75% 15%, 75% 100%, 0 85%);
+  position: absolute;
+  bottom: 0;
+}
+
+.paredIzq2{
+  height: 80%;
+  width: 60%;
+  background-color: #CFF5FF;
+  clip-path: polygon(0 0, 75% 15%, 75% 100%, 0 85%);
+  position: absolute;
+  bottom: 0;
+}
+
+.paredDer{
+  height: 80%;
+  width: 50%;
+  background-color: #3491A8;
+  position: absolute;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  left: 45%;
+}
+
+
+.paredDer2{
+  height: 80%;
+  width: 50%;
+  background-color: #3491A8;
+  position: absolute;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  left: 45%;
+}
+
+.techo{
+  clip-path: polygon(0 85%, 37% 75%, 75% 87%, 41% 100%);
+  height: 80%;
+  width: 109%;
+  background-color: #82D4E8;
+  position: absolute;
+  bottom: 69%;
+  z-index: 1000;
+
+}
+
+.techo2{
+  clip-path: polygon(0 85%, 37% 75%, 75% 87%, 41% 100%);
+  height: 80%;
+  width: 109%;
+  background-color: #82D4E8;
+  position: absolute;
+  bottom: 69%;
+  z-index: 1000;
+
+}
+
+.paredDer2{
+  height: 80%;
+  width: 50%;
+  background-color: #3491A8;
+  position: absolute;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  left: 45%;
+}
+
+
+/* height: 31vh;
+top: 0vh;
+left: -18%; */

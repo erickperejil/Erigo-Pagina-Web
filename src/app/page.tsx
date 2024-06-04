@@ -1,10 +1,17 @@
 'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Aleo } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import { relative } from "path";
+import { height, width } from "@fortawesome/free-solid-svg-icons/fa0";
+
+
+const aleo = Aleo({ subsets: ['latin'] });
+
 
 const servicios = [
   {
@@ -30,6 +37,8 @@ const serviciosIconos = [
   <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting}  style={{ color: "#065569" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard}  style={{ color: "#065569" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck}  style={{ color: "#065569" }} />,
+  <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} style={{marginBottom:'2vh'}}/>,
+  <FontAwesomeIcon icon={faLocationDot} className={styles.iconosContactosIconos}/>
 ];
 
 const serviciosIconosHover = [
@@ -37,11 +46,16 @@ const serviciosIconosHover = [
   <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#EDAA25" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#EDAA25" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#EDAA25" }} />,
+  <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} bounce style={{marginBottom:'2vh'}}/>,
+  <FontAwesomeIcon icon={faLocationDot} bounce className={styles.iconosContactosIconos}/>
 ];
   
 
 export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const [hoveredMail, setHoveredMail] = useState(false);
+  const [hoveredMap, setHoveredMap] = useState(false);
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -51,6 +65,21 @@ export default function Home() {
     setHoveredIndex(null);
   };
 
+  const handleMouseEnterMail = () => {
+    setHoveredMail(true);
+  };
+
+  const handleMouseLeaveMail = () => {
+    setHoveredMail(false)
+  };
+
+  const handleMouseEnterMap = () => {
+    setHoveredMap(true);
+  };
+
+  const handleMouseLeaveMap = () => {
+    setHoveredMap(false)
+  };
   return (
     <main className={styles.main}>
       <nav className={styles.tituloNav}>
@@ -177,10 +206,130 @@ export default function Home() {
             </div>
             </div>
 
-            <div className={styles.obraTipo}></div>
-            <div className={styles.obraTipo}></div>
-            <div className={styles.obraTipo}></div>
-            <div className={styles.obraTipo}></div>
+            <div className={styles.obraTipo}>
+              <div className={styles.obraDescripcion}>
+                <div className={styles.obraTexto}>
+                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                </div>
+              </div>
+              <div className={styles.obraImagen}>
+                <div className={styles.imagenEspacio}></div>
+              </div>
+            </div> 
+
+            <div className={styles.obraTipo}>
+            <div className={styles.obraImagenInverse}>
+              <div className={styles.imagenEspacioInverse}></div>
+            </div>
+            <div className={styles.obraDescripcion}>
+                <div className={styles.obraTexto}>
+                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                </div>
+            </div>
+            </div>
+
+            <div className={styles.obraTipo}>
+              <div className={styles.obraDescripcion}>
+                <div className={styles.obraTexto}>
+                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                </div>
+              </div>
+              <div className={styles.obraImagen}>
+                <div className={styles.imagenEspacio}></div>
+              </div>
+            </div> 
+
+            <div className={styles.obraTipo}>
+            <div className={styles.obraImagenInverse}>
+              <div className={styles.imagenEspacioInverse}></div>
+            </div>
+            <div className={styles.obraDescripcion}>
+                <div className={styles.obraTexto}>
+                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                </div>
+            </div>
+            </div>
+
+      </div>
+
+      <div className={styles.contacto}>
+        <div className={styles.contactoInfo}>
+            <div className={styles.horarios}>
+              <h2 className={styles.horariosH2}>Horario de atencion</h2>
+              <div className={styles.horariosFecha}>
+                <div className={styles.horariosDia}>
+                  <h3 className={styles.horariosH3}>Lunes a Viernes</h3>
+                  <h3 className={`${styles.horariosH3} ${aleo.className}`}>Sabados</h3>
+                </div>
+                <div className={styles.horariosHora}>
+                  <h3>8am - 5pm</h3>
+                  <h3>8am- 12pm</h3>
+                </div>
+              </div>
+
+            </div>
+            <div className={styles.info}>
+               <h2 className={styles.horariosH2}>Teléfono: #999 9999-9999</h2>
+              <div className={styles.horariosFecha}>
+                <div className={styles.iconosContactos} style={{border: '2px solid red', width:'12%'}}>
+                <div onMouseEnter={handleMouseEnterMail} onMouseLeave={handleMouseLeaveMail}>
+                {hoveredMail ? serviciosIconosHover[4] : serviciosIconos[4]}
+                </div>
+                <div onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>
+                {hoveredMap ? serviciosIconosHover[5] : serviciosIconos[5]}
+                </div>
+                
+                </div>
+                <div className={styles.horariosDia} style={{width:'30%'}}>
+                  <h3 className={styles.horariosH3} style={{marginBottom:'2vh'}}>Email</h3>
+                  <h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap} className={`${styles.horariosH3} ${aleo.className}`}>Ubicacion</h3>
+                </div>
+                <div className={styles.horariosHora} style={{width:'70%'}}>
+                  <h3 style={{marginBottom:'2vh'}} >clientes@erigoingenieria.com</h3>
+                  <h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>Col. El Hato, Calle Principal Frente a MotoRepuestos</h3>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div className={styles.redesSociales} style={{display:'flex'}}>
+            <div style={{width: '50%', height: '100%', display:'flex'}}>
+              <div className={styles.dibujoBonito}>
+                <div className={styles.paredIzq}></div>
+                <div className={styles.techo}></div>
+                <div className={styles.paredDer}></div>
+              </div>
+              <div className={styles.dibujoBonito}>
+                <div className={styles.paredIzq2}></div>
+                <div className={styles.techo2}></div>
+                <div className={styles.paredDer2}></div>
+              </div>
+
+
+            </div>
+
+            <div style={{width: '50%', height:'100%', border:'2px solid blue', display:'flex', alignItems:'flex-end'}}>
+              <div style={{width:'100%', height:'30%', border:'2px solid blue', display:'flex', justifyContent:'center'}}>
+                <div className={styles.contenedorIcono}>
+                <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%'}}/>
+                </div>
+                <div className={styles.contenedorIcono}>
+                <FontAwesomeIcon icon={faInstagram} style={{height:'90%'}}/>
+                </div>
+                <div className={styles.contenedorIcono}>
+                <FontAwesomeIcon icon={faFacebookSquare} style={{height:'90%'}}/>
+                </div>
+              </div>
+            </div>
+        </div>
 
       </div>
     </main>
