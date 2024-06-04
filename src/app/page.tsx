@@ -307,31 +307,44 @@ export default function Home() {
                 <div className={styles.techo}></div>
                 <div className={styles.paredDer}></div>
               </div>
-              <div className={styles.dibujoBonito}>
+              <div className={styles.dibujoBonito} style={{
+                left: '-14%',
+                top: '-3vh'
+              }}>
                 <div className={styles.paredIzq2}></div>
                 <div className={styles.techo2}></div>
                 <div className={styles.paredDer2}></div>
+              </div>
+              <div className={styles.dibujoBonito} style={{
+                left: '-30%',
+                top: '-8vh'
+              }}>
+                <div className={styles.paredIzq3}></div>
+                <div className={styles.techo3}></div>
+                <div className={styles.paredDer3}></div>
               </div>
 
 
             </div>
 
             <div style={{width: '50%', height:'100%', border:'2px solid blue', display:'flex', alignItems:'flex-end'}}>
-              <div style={{width:'100%', height:'30%', border:'2px solid blue', display:'flex', justifyContent:'center'}}>
+              <div style={{width:'100%', height:'30%', border:'2px solid blue', display:'flex',justifyContent: 'flex-end',paddingRight: '15%'}}>
                 <div className={styles.contenedorIcono}>
-                <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%'}}/>
+                <FontAwesomeIcon icon={faFacebookSquare} style={{height:'90%'}}/>
                 </div>
                 <div className={styles.contenedorIcono}>
                 <FontAwesomeIcon icon={faInstagram} style={{height:'90%'}}/>
                 </div>
                 <div className={styles.contenedorIcono}>
-                <FontAwesomeIcon icon={faFacebookSquare} style={{height:'90%'}}/>
+                <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%'}}/>
                 </div>
               </div>
             </div>
         </div>
 
       </div>
+
+      <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%' , position:'absolute'}}/>
     </main>
   );
 }
