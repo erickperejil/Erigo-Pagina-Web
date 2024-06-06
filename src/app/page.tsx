@@ -7,7 +7,7 @@ import { faWhatsapp, faInstagram, faFacebookSquare } from '@fortawesome/free-bra
 import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import { relative } from "path";
-import { height, width } from "@fortawesome/free-solid-svg-icons/fa0";
+import Link from "next/link";
 
 
 const aleo = Aleo({ subsets: ['latin'] });
@@ -30,14 +30,14 @@ const servicios = [
     titulo: "Diseño y planificación",
     descripcion: "contamos con un equipo altamente capacitado para el diseño y planificación de proyectos civiles, utilizando tecnologías de última generación para garantizar la calidad y eficiencia en cada etapa del proyecto."
   }
-  ]
+]
 
 const serviciosIconos = [
   <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety}  style={{ color: "#065569" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting}  style={{ color: "#065569" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard}  style={{ color: "#065569" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck}  style={{ color: "#065569" }} />,
-  <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} style={{marginBottom:'2vh'}}/>,
+  <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} style={{marginBottom:'4vh'}}/>,
   <FontAwesomeIcon icon={faLocationDot} className={styles.iconosContactosIconos}/>
 ];
 
@@ -46,7 +46,7 @@ const serviciosIconosHover = [
   <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#EDAA25" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#EDAA25" }} />,
   <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#EDAA25" }} />,
-  <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} bounce style={{marginBottom:'2vh'}}/>,
+  <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} bounce style={{marginBottom:'4vh'}}/>,
   <FontAwesomeIcon icon={faLocationDot} bounce className={styles.iconosContactosIconos}/>
 ];
   
@@ -283,11 +283,11 @@ export default function Home() {
                 
                 </div>
                 <div className={styles.horariosDia} style={{width:'30%'}}>
-                  <h3 className={styles.horariosH3} style={{marginBottom:'2vh'}}>Email</h3>
+                  <h3 className={styles.horariosH3} style={{marginBottom:'4vh'}}>Email</h3>
                   <h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap} className={`${styles.horariosH3} ${aleo.className}`}>Ubicacion</h3>
                 </div>
                 <div className={styles.horariosHora} style={{width:'70%'}}>
-                  <h3 style={{marginBottom:'2vh'}} >clientes@erigoingenieria.com</h3>
+                  <h3 style={{marginBottom:'4vh'}} >clientes@erigoingenieria.com</h3>
                   <h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>Col. El Hato, Calle Principal Frente a MotoRepuestos</h3>
                 </div>
               </div>
@@ -339,8 +339,10 @@ export default function Home() {
         </div>
 
       </div>
-
-      
+{/* 
+      <Link href="/proyectos">
+                <button>Go to First Page</button>
+      </Link> */}
     </main>
   );
 }

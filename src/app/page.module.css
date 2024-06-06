@@ -466,7 +466,7 @@
 
 .vista2ServiciosFila{
   /* border: 2px solid red; */
-  height: 68%;
+  height: 75%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -579,7 +579,7 @@
   width: 21%;
   display: flex;
   flex-direction: column-reverse;
-  box-shadow: 9px 13px 20px #00000078;
+  box-shadow: 5px 5px 20px #00000078;
   border-radius: 15px;
 }
 
@@ -630,7 +630,6 @@ height: 70%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #001124;
 }
 
 .obraImagenInverse{
@@ -638,14 +637,14 @@ height: 70%;
   height: 100%;
   /* border: 2px solid darkslategrey; */
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: flex-end;
   background-image: url(/img/ObraEjemplo.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #001124;
   transform: scaleX(-1);
+  
 }
 
 .obraDescripcion, .obraDescripcionInverse{
@@ -752,7 +751,7 @@ height: 70%;
 
 .horariosH2{
   /* border: 2px solid blue; */
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .iconosContactos{
@@ -875,3 +874,51 @@ height: 70%;
 /* height: 31vh;
 top: 0vh;
 left: -18%; */
+
+/* Proyectos Segunda Pagina */
+
+.main2{
+  background-color: white;
+  width: 100%;
+  overflow: hidden;
+  height: 300vh;
+}
+
+.cardIntroduccion2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.LineaTiempo2{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(146, 146, 146);
+  display: flex;
+  justify-content: space-between;
+  clip-path: polygon(49% 0, 51% 0, 51% 80%, 49% 80%)
+}
+
+.vista2{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyecto2{
+  height: 100%;
+  width: 49.4%;
+  background-color: white;
+  position: absolute;
+  height: 190vh;
+  top: 110vh;
+  z-index: 400;
+}
+
+.proyectoHidder{
+  width: 100%;
+  height: 72vh;
+  background-color: #065569ff;
+  position: fixed;
+  z-index: 100;
+}
