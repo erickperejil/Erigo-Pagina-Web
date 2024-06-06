@@ -189,15 +189,13 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.obraImagen}>
-                <div className={styles.imagenEspacio}></div>
               </div>
             </div>
 
             <div className={styles.obraTipo}>
             <div className={styles.obraImagenInverse}>
-              <div className={styles.imagenEspacioInverse}></div>
             </div>
-            <div className={styles.obraDescripcion}>
+            <div className={styles.obraDescripcionInverse}>
                 <div className={styles.obraTexto}>
                   <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
@@ -215,15 +213,13 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.obraImagen}>
-                <div className={styles.imagenEspacio}></div>
               </div>
-            </div> 
+            </div>
 
             <div className={styles.obraTipo}>
             <div className={styles.obraImagenInverse}>
-              <div className={styles.imagenEspacioInverse}></div>
             </div>
-            <div className={styles.obraDescripcion}>
+            <div className={styles.obraDescripcionInverse}>
                 <div className={styles.obraTexto}>
                   <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
@@ -241,15 +237,13 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.obraImagen}>
-                <div className={styles.imagenEspacio}></div>
               </div>
-            </div> 
+            </div>
 
             <div className={styles.obraTipo}>
             <div className={styles.obraImagenInverse}>
-              <div className={styles.imagenEspacioInverse}></div>
             </div>
-            <div className={styles.obraDescripcion}>
+            <div className={styles.obraDescripcionInverse}>
                 <div className={styles.obraTexto}>
                   <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
@@ -263,11 +257,11 @@ export default function Home() {
       <div className={styles.contacto}>
         <div className={styles.contactoInfo}>
             <div className={styles.horarios}>
-              <h2 className={styles.horariosH2}>Horario de atencion</h2>
+              <h2 className={styles.horariosH2}>Horario de atención</h2>
               <div className={styles.horariosFecha}>
                 <div className={styles.horariosDia}>
                   <h3 className={styles.horariosH3}>Lunes a Viernes</h3>
-                  <h3 className={`${styles.horariosH3} ${aleo.className}`}>Sabados</h3>
+                  <h3 className={`${styles.horariosH3} ${aleo.className}`}>Sábados</h3>
                 </div>
                 <div className={styles.horariosHora}>
                   <h3>8am - 5pm</h3>
@@ -279,7 +273,7 @@ export default function Home() {
             <div className={styles.info}>
                <h2 className={styles.horariosH2}>Teléfono: #999 9999-9999</h2>
               <div className={styles.horariosFecha}>
-                <div className={styles.iconosContactos} style={{border: '2px solid red', width:'12%'}}>
+                <div className={styles.iconosContactos} style={{width:'12%'}}>
                 <div onMouseEnter={handleMouseEnterMail} onMouseLeave={handleMouseLeaveMail}>
                 {hoveredMail ? serviciosIconosHover[4] : serviciosIconos[4]}
                 </div>
@@ -327,15 +321,17 @@ export default function Home() {
 
             </div>
 
-            <div style={{width: '50%', height:'100%', border:'2px solid blue', display:'flex', alignItems:'flex-end'}}>
-              <div style={{width:'100%', height:'30%', border:'2px solid blue', display:'flex',justifyContent: 'flex-end',paddingRight: '15%'}}>
+            <div style={{width: '50%', height:'100%',  display:'flex', alignItems:'flex-end'}}>
+              <div style={{width:'80%', height:'30%',  display:'flex',justifyContent: 'flex-end'}}>
                 <div className={styles.contenedorIcono}>
                 <FontAwesomeIcon icon={faFacebookSquare} style={{height:'90%'}}/>
                 </div>
                 <div className={styles.contenedorIcono}>
                 <FontAwesomeIcon icon={faInstagram} style={{height:'90%'}}/>
                 </div>
-                <div className={styles.contenedorIcono}>
+              </div>
+              <div className={styles.wasapIcon}>
+              <div className={styles.contenedorIcono}>
                 <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%'}}/>
                 </div>
               </div>
@@ -344,7 +340,7 @@ export default function Home() {
 
       </div>
 
-      <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%' , position:'absolute'}}/>
+      
     </main>
   );
 }
