@@ -2,7 +2,7 @@ import styles from "../page.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function proyectos() {
 
@@ -62,9 +62,51 @@ export default function proyectos() {
                 </div>
                 <section className={styles.LineaTiempo2}>
                 </section>
-                <div className={styles.proyecto2}></div>
-                <div className={styles.proyecto2} style={{right:'0'}}></div>
-                <div className={styles.mainFooter} style={{bottom:'-200%', position: 'absolute', zIndex:'1000', height:'5%'}}></div>
+                <div className={styles.proyecto2}>
+                    <div className={styles.historiaR}></div>
+                    <div className={styles.historiaR}></div>
+                    <div className={styles.historiaR}></div>
+                </div>
+
+                <div className={styles.proyecto2} style={{right:'0'}}>
+                    <div className={styles.historiaR}></div>
+                    <div className={styles.historiaR}></div>
+                    <div className={styles.historiaR}></div>
+                </div>
+
+                <div className={styles.iconosLineaTiempo}>
+                    <div className={styles.iconoTiempo}>
+                    <FontAwesomeIcon icon={faCircle} style={{color: "#969696",}} />
+                    </div>
+                    <div className={styles.iconoTiempo} style={{position: 'absolute',width: '80%'}}>
+                    <FontAwesomeIcon icon={faCircle} style={{color: "red",}} />
+                    </div>
+
+                </div>
+
+
+                <div className={styles.iconosLineaTiempo} style={{top: '185vh', backgroundColor: 'transparent'}}>
+                    <div className={styles.iconoTiempo}>
+                    <FontAwesomeIcon icon={faCircle} style={{color: "#969696",}} />
+                    </div>
+                    <div className={styles.iconoTiempo} style={{position: 'absolute',width: '80%'}}>
+                    <FontAwesomeIcon icon={faCircle} style={{color: "red",}} />
+                    </div>
+
+                </div>
+
+
+                <div className={styles.iconosLineaTiempo} style={{    top: '290vh',backgroundColor: 'white',flexDirection: 'column',}}>
+                    <div className={styles.iconoTiempo}>
+                    <FontAwesomeIcon icon={faCircle} style={{color: "#969696",}} />
+                    </div>
+                    <div className={styles.iconoTiempo} style={{position: 'absolute',width: '80%'}}>
+                    <FontAwesomeIcon icon={faCircle} style={{color: "red",}} />
+                    </div>
+
+                </div>
+
+                <div className={styles.mainFooter} style={{bottom:'-271%', position: 'absolute', zIndex:'1000', height:'5%'}}></div>
         </main>
     )
 };

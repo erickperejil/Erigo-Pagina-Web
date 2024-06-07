@@ -881,7 +881,7 @@ left: -18%; */
   background-color: white;
   width: 100%;
   overflow: hidden;
-  height: 300vh;
+  height: 370vh;
 }
 
 .cardIntroduccion2{
@@ -910,7 +910,7 @@ left: -18%; */
   width: 49.4%;
   background-color: white;
   position: absolute;
-  height: 190vh;
+  height: 260vh;
   top: 110vh;
   z-index: 400;
 }
@@ -921,4 +921,40 @@ left: -18%; */
   background-color: #065569ff;
   position: fixed;
   z-index: 100;
+}
+
+.historiaR{
+  border: 2px solid red;
+  height: 70vh;
+  width: 80%;
+}
+
+.proyecto2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.iconosLineaTiempo{
+  width: 7%;
+  height: 46vh;
+  /* border: 2px solid darkred; */
+  background-color: white;
+  position: absolute;
+  top: 110vh;
+  z-index: 400;
+  right: 46.5%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+}
+
+.iconoTiempo{
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
