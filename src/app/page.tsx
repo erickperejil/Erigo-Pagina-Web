@@ -42,10 +42,10 @@ const serviciosIconos = [
 ];
 
 const serviciosIconosHover = [
-  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#EDAA25" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#EDAA25" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#EDAA25" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#EDAA25" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#3491A8" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#3491A8" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#3491A8" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#3491A8" }} />,
   <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} bounce style={{marginBottom:'4vh'}}/>,
   <FontAwesomeIcon icon={faLocationDot} bounce className={styles.iconosContactosIconos}/>
 ];
@@ -331,7 +331,15 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.wasapIcon}>
-              <div className={styles.contenedorIcono}>
+              <div className={styles.contenedorIcono}
+              style={{
+                backgroundColor: '#2db742',
+                borderRadius: '15px',
+                display: 'flex',
+                justifyContent: 'center',
+                height: '90%',
+                alignItems: 'center',
+              }}>
                 <FontAwesomeIcon icon={faWhatsapp} style={{height:'90%'}}/>
                 </div>
               </div>

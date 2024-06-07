@@ -63,15 +63,27 @@ export default function proyectos() {
                 <section className={styles.LineaTiempo2}>
                 </section>
                 <div className={styles.proyecto2}>
+                    <div className={styles.historiaR} style={{display:'flex', flexDirection:'row-reverse', alignItems:'center'}}>
+                        <div className={styles.historiaRImagen}></div>
+                    </div>
                     <div className={styles.historiaR}></div>
-                    <div className={styles.historiaR}></div>
-                    <div className={styles.historiaR}></div>
+                    <div className={styles.historiaR} style={{display:'flex', flexDirection:'row-reverse', alignItems:'center'}}>
+                        <div className={styles.historiaRImagen}></div>
+                    </div>
                 </div>
 
                 <div className={styles.proyecto2} style={{right:'0'}}>
-                    <div className={styles.historiaR}></div>
-                    <div className={styles.historiaR}></div>
-                    <div className={styles.historiaR}></div>
+                    <div className={styles.historiaR} style={{display:'flex', justifyContent:'center',flexDirection:'column'}}>
+                        <h2 style={{color: '#065569ff'}}>202X</h2>
+                        <h3 style={{color: '#065569ff'}}>Titulo de Proyecto</h3>
+                    </div>
+                    <div className={styles.historiaR} style={{display:'flex', flexDirection:'row', alignItems:'center', transform: 'scaleX(-1)'}}>
+                        <div className={styles.historiaRImagen}></div>
+                    </div>
+                    <div className={styles.historiaR} style={{display:'flex', justifyContent:'center',flexDirection:'column'}}>
+                        <h2 style={{color: '#065569ff'}}>202X</h2>
+                        <h3 style={{color: '#065569ff'}}>Titulo de Proyecto</h3>
+                    </div>
                 </div>
 
                 <div className={styles.iconosLineaTiempo}>
@@ -79,29 +91,27 @@ export default function proyectos() {
                     <FontAwesomeIcon icon={faCircle} style={{color: "#969696",}} />
                     </div>
                     <div className={styles.iconoTiempo} style={{position: 'absolute',width: '80%'}}>
-                    <FontAwesomeIcon icon={faCircle} style={{color: "red",}} />
+                    <FontAwesomeIcon icon={faCircle} style={{color: "white",}} />
                     </div>
 
                 </div>
-
 
                 <div className={styles.iconosLineaTiempo} style={{top: '185vh', backgroundColor: 'transparent'}}>
                     <div className={styles.iconoTiempo}>
                     <FontAwesomeIcon icon={faCircle} style={{color: "#969696",}} />
                     </div>
                     <div className={styles.iconoTiempo} style={{position: 'absolute',width: '80%'}}>
-                    <FontAwesomeIcon icon={faCircle} style={{color: "red",}} />
+                    <FontAwesomeIcon icon={faCircle} style={{color: "white",}} />
                     </div>
 
                 </div>
 
-
-                <div className={styles.iconosLineaTiempo} style={{    top: '290vh',backgroundColor: 'white',flexDirection: 'column',}}>
+                <div className={styles.iconosLineaTiempo} style={{    top: '290vh',backgroundColor: 'white',flexDirection: 'column',height: '65vh'}}>
                     <div className={styles.iconoTiempo}>
                     <FontAwesomeIcon icon={faCircle} style={{color: "#969696",}} />
                     </div>
                     <div className={styles.iconoTiempo} style={{position: 'absolute',width: '80%'}}>
-                    <FontAwesomeIcon icon={faCircle} style={{color: "red",}} />
+                    <FontAwesomeIcon icon={faCircle} style={{color: "white",}} />
                     </div>
 
                 </div>

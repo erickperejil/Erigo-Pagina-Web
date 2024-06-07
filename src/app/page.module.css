@@ -937,14 +937,14 @@ left: -18%; */
 }
 
 .iconosLineaTiempo{
-  width: 7%;
+  width: 5%;
   height: 46vh;
   /* border: 2px solid darkred; */
   background-color: white;
   position: absolute;
   top: 110vh;
   z-index: 400;
-  right: 46.5%;
+  right: 47.5%;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -952,9 +952,21 @@ left: -18%; */
 }
 
 .iconoTiempo{
-  height: 12vh;
+  height: 0vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 2px solid green; */
+}
+
+.historiaRImagen{
+  border: 2px solid hotpink;
+  height: 90%;
+  width: 90%;
+  background-image: url("/img/HistoriaFormato.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  background-color: #004ea7;
 }
