@@ -5,9 +5,8 @@ import { Aleo } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
-import { relative } from "path";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+
 
 
 const aleo = Aleo({ subsets: ['latin'] });
@@ -80,9 +79,71 @@ export default function Home() {
   const handleMouseLeaveMap = () => {
     setHoveredMap(false)
   };
+
+  const [scrolled, setScrolled] = useState(false);
+  
+  const [scrollStates, setScrollStates] = useState({
+    scrolledObra1: false,
+    scrolledObra2: false,
+    scrolledObra3: false,
+    scrolledObra4: false,
+    scrolledObra5: false,
+    scrolledObra6: false,
+  });
+
+
+  const setSingleScrollState = (key: string, value: boolean) => {
+    setScrollStates((prevStates) => ({
+      ...prevStates,
+      [key]: value,
+    }));
+  };
+
+  const handleScroll = () => {
+    const offset = window.pageYOffset;
+    if (offset > 900) { // Puedes ajustar el valor según tus necesidades
+      setScrolled(true);
+      if(offset>1600){
+        setSingleScrollState('scrolledObra1', true);
+        if(offset>2000){
+          setSingleScrollState('scrolledObra2', true);
+          if(offset>2400){
+            setSingleScrollState('scrolledObra3', true);
+            if(offset>2800){
+              setSingleScrollState('scrolledObra4', true);
+              if(offset>3200){
+                setSingleScrollState('scrolledObra5', true);
+                if(offset>3700){
+                  setSingleScrollState('scrolledObra6', true);
+                }
+                else{setSingleScrollState('scrolledObra6', false);}
+              }
+              else{setSingleScrollState('scrolledObra5', false);}
+            }
+            else{setSingleScrollState('scrolledObra4', false);}
+          }
+          else{setSingleScrollState('scrolledObra3', false);}
+        }
+        else{setSingleScrollState('scrolledObra2', false);}
+      }
+      else{setSingleScrollState('scrolledObra1', false);}
+    } else {
+      setScrolled(false);
+    }
+    console.log(offset);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <main className={styles.main}>
-      <nav className={styles.tituloNav}>
+      <nav className={`${styles.tituloNav} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.tituloLogo}>
           <Image
             src="/img/Erigo-logo.png"
@@ -93,21 +154,21 @@ export default function Home() {
             priority
           />
         </div>
-        <div className={styles.tituloTitulo}>
+        <div className={`${styles.tituloTitulo} ${scrolled ? styles.scrolled : ''}`}>
           <h2>ERIGO INGENIERIA</h2>
         </div>
         <div className={styles.navSegmentos}>
-          <div className={styles.segmento}>
-            <h4 className={styles.segmentoTexto}>Sobre Nosotros</h4>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+            <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Sobre Nosotros</h4>
           </div>
-          <div className={styles.segmento}>
-            <h4 className={styles.segmentoTexto}>Nuestros Proyectos</h4>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+            <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Nuestros Proyectos</h4>
           </div>
-          <div className={styles.segmento}>
-            <h4 className={styles.segmentoTexto}>De Interés</h4>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+            <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>De Interés</h4>
           </div>
-          <div className={styles.segmento}>
-            <h4 className={styles.segmentoTexto}>Contáctanos</h4>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+            <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Contáctanos</h4>
           </div>
         </div>
       </nav>
@@ -143,13 +204,13 @@ export default function Home() {
           <div className={styles.serviciosIconos}></div>
           <div className={styles.vista2ServiciosFila}>
             {servicios.map((servicio, index) => (
-              <div className={styles.servicioContenedor}
+              <div key={index} className={styles.servicioContenedor}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}>
                 <div className={styles.servicioIcono}>
                   {hoveredIndex === index ? serviciosIconosHover[index] : serviciosIconos[index]}
                 </div>
-                <div key={index} className={styles.vista2Servicio}>
+                <div className={styles.vista2Servicio}>
                   <div className={styles.servicioImagen}>
                     <div className={styles.servicioImagenSombra}>
                       <div className={styles.servicioDescripcion} style={{
@@ -180,19 +241,36 @@ export default function Home() {
       </div>
 
       <div className={styles.obrasCiviles}>
-            <div className={styles.obraTipo}>
-              <div className={styles.obraDescripcion}>
-                <div className={styles.obraTexto}>
-                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
-                  <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
-                </div>
-              </div>
-              <div className={styles.obraImagen}>
-              </div>
+            <div className={`${styles.obraTipo} ${scrollStates.scrolledObra1 ? styles.scrolled : ''}`}
+              style={{
+                position: 'absolute',
+                top: scrollStates.scrolledObra1 ? '320vh' : '390vh'
+              }}
+              >
+                    <div className={styles.obraDescripcion}>
+                      <div className={styles.obraTexto}>
+                        <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                        <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                      </div>
+                    </div>
+                    <div className={styles.obraImagen}>
+                    </div>
+                    <div className={styles.obraFilter} style={{
+                      backgroundColor: scrollStates.scrolledObra1 ? 'transparent' : 'white'
+                    }}></div>
             </div>
 
-            <div className={styles.obraTipo}>
+            <div className={`${styles.obraTipo} ${scrollStates.scrolledObra2 ? styles.scrolled : ''}`}
+              style={{
+                position: 'absolute',
+                top: scrollStates.scrolledObra2 ? '390vh' : '460vh'
+              }}
+              >
+                <div className={styles.obraFilter} style={{
+                  backgroundColor: scrollStates.scrolledObra2 ? 'transparent' : 'white'
+                }}></div>
             <div className={styles.obraImagenInverse}>
             </div>
             <div className={styles.obraDescripcionInverse}>
@@ -204,7 +282,12 @@ export default function Home() {
             </div>
             </div>
 
-            <div className={styles.obraTipo}>
+            <div className={`${styles.obraTipo} ${scrollStates.scrolledObra3 ? styles.scrolled : ''}`}
+              style={{
+                position: 'absolute',
+                top: scrollStates.scrolledObra3 ? '460vh' : '530vh'
+              }}
+              >
               <div className={styles.obraDescripcion}>
                 <div className={styles.obraTexto}>
                   <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
@@ -214,9 +297,20 @@ export default function Home() {
               </div>
               <div className={styles.obraImagen}>
               </div>
+              <div className={styles.obraFilter} style={{
+                backgroundColor: scrollStates.scrolledObra3 ? 'transparent' : 'white'
+              }}></div>
             </div>
 
-            <div className={styles.obraTipo}>
+            <div className={`${styles.obraTipo} ${scrollStates.scrolledObra4 ? styles.scrolled : ''}`}
+              style={{
+                position: 'absolute',
+                top: scrollStates.scrolledObra4 ? '530vh' : '600vh'
+              }}
+              >
+            <div className={styles.obraFilter} style={{
+              backgroundColor: scrollStates.scrolledObra4 ? 'transparent' : 'white'
+            }}></div>
             <div className={styles.obraImagenInverse}>
             </div>
             <div className={styles.obraDescripcionInverse}>
@@ -228,7 +322,12 @@ export default function Home() {
             </div>
             </div>
 
-            <div className={styles.obraTipo}>
+            <div className={`${styles.obraTipo} ${scrollStates.scrolledObra5 ? styles.scrolled : ''}`}
+              style={{
+                position: 'absolute',
+                top: scrollStates.scrolledObra5 ? '600vh' : '670vh'
+              }}
+              >
               <div className={styles.obraDescripcion}>
                 <div className={styles.obraTexto}>
                   <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
@@ -238,9 +337,20 @@ export default function Home() {
               </div>
               <div className={styles.obraImagen}>
               </div>
+              <div className={styles.obraFilter} style={{
+                backgroundColor: scrollStates.scrolledObra5 ? 'transparent' : 'white'
+              }}></div>
             </div>
 
-            <div className={styles.obraTipo}>
+            <div className={`${styles.obraTipo} ${scrollStates.scrolledObra6 ? styles.scrolled : ''}`}
+              style={{
+                position: 'absolute',
+                top: scrollStates.scrolledObra6 ? '670vh' : '740vh'
+              }}
+              >
+            <div className={styles.obraFilter} style={{
+              backgroundColor: scrollStates.scrolledObra6 ? 'transparent' : 'white'
+            }}></div>
             <div className={styles.obraImagenInverse}>
             </div>
             <div className={styles.obraDescripcionInverse}>

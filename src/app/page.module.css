@@ -363,7 +363,14 @@
   top: 0;
   z-index: 1000;
   overflow-y: hidden;
+  transition: background-color 0.5s ease;
 
+}
+
+
+.tituloNav.scrolled {
+  background-color: #ffffffe8;
+  box-shadow: 2px -3px 20px #2f2e2e7a;
 }
 
 
@@ -382,7 +389,14 @@
   display: flex;
   align-items: center;
   margin-left: 1%;
+  transition: color 0.5s ease;
 }
+
+.tituloTitulo.scrolled{
+  /* border: 2px solid red; */
+  color:#065569ff;
+}
+
 
 .navSegmentos{
   height: 100%;
@@ -399,21 +413,34 @@
   display: flex;
   justify-content: center;
   align-items:center ;
-  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, margin 0.5s ease;
+  transition: background-color 0.5s ease, color 0.2s ease, box-shadow 0.5s ease, margin 0.5s ease;
 
   
 }
+
 
 .segmento:hover{
   background-color: rgba(255, 255, 255, 0.919);
   color: #001124;
   box-shadow: 2px 2px 2px rgb(195, 195, 195);
-  margin: 1px 0 0 -5px;
-  
-  
+  margin: 1px 0 0 -5px; 
+}
+
+.segmento.scrolled:hover{
+  background-color:  rgba(255, 255, 255, 0.919);
+  color: white;
+  box-shadow: 2px 2px 2px rgb(195, 195, 195);
+  margin: 1px 0 0 -5px; 
 }
 
 .segmentoTexto{
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.5s ease;
+}
+
+.segmentoTexto.scrolled{
+  color: #065569ff;
   font-weight: 600;
   text-align: center;
 }
@@ -615,8 +642,26 @@ height: 70%;
   /* border: 2px solid orange; */
   display: flex;
   flex-direction: row;
+  transition: top 1s ease;
+
 }
 
+.obraTipo.scrolled{
+  height: 70vh;
+  width: 100%;
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-direction: row;
+}
+
+.obraFilter{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 300;
+  transition: background-color 2s ease;
+}
 
 
 .obraImagen{
@@ -626,7 +671,7 @@ height: 70%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-image: url(/img/ObraEjemplo.png);
+  background-image: url(/img/rediseñoObras.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -639,7 +684,7 @@ height: 70%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-image: url(/img/ObraEjemplo.png);
+  background-image: url(/img/rediseñoObras.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -710,6 +755,7 @@ height: 70%;
   width: 100%;
   /* border: 2px solid #001124; */
   background-color: #065569ff;
+  z-index: 500;
 }
 
 .contactoInfo{
