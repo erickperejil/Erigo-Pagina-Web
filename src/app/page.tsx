@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation'
+import { text } from "stream/consumers";
 
 
 
@@ -80,6 +82,10 @@ export default function Home() {
     setHoveredMap(false)
   };
 
+  function scrollWin(x:number, y:number) {
+    window.scrollBy(x, y);
+  }
+
   const [scrolled, setScrolled] = useState(false);
   
   const [scrollStates, setScrollStates] = useState({
@@ -100,7 +106,10 @@ export default function Home() {
   };
 
   const handleScroll = () => {
-    const offset = window.pageYOffset;
+    const offset = window.scrollY;
+    if (offset>400){
+      imprimirTexto();
+    }
     if (offset > 900) { // Puedes ajustar el valor según tus necesidades
       setScrolled(true);
       if(offset>1600){
@@ -130,7 +139,6 @@ export default function Home() {
     } else {
       setScrolled(false);
     }
-    console.log(offset);
   };
 
   useEffect(() => {
@@ -140,6 +148,23 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const router = useRouter();
+
+  const texto1 = "Desde su fundación, hemos trabajado en una gran variedad de proyectos, desde pequeñas obras de construcción hasta grandes infraestructuras, nos comprometemos con la excelencia y la satisfacción del cliente.";
+  const texto12 = "Juntos construimos el futuro";
+
+  const textoImprimir1 ="";
+  
+  const delay  = (ms:number) => new Promise(res => setTimeout(res, ms));
+
+  const imprimirTexto = async () => {
+    for (let index = 0; index < texto1.length; index++) {
+      textoImprimir1.concat(texto1.charAt(index));
+      await delay(0.2);
+      console.log(texto1.charAt(index));
+    }
+  }
 
   return (
     <main className={styles.main}>
@@ -158,16 +183,16 @@ export default function Home() {
           <h2>ERIGO INGENIERIA</h2>
         </div>
         <div className={styles.navSegmentos}>
-          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`} onClick={() => scrollWin(0, -9500)}>
             <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Sobre Nosotros</h4>
           </div>
-          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`} onClick={() => router.push('/proyectos')}>
             <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Nuestros Proyectos</h4>
           </div>
           <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
             <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>De Interés</h4>
           </div>
-          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`}>
+          <div className={`${styles.segmento} ${scrolled ? styles.scrolled : ''}`} onClick={() => scrollWin(0, 9500)}>
             <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Contáctanos</h4>
           </div>
         </div>
@@ -193,7 +218,7 @@ export default function Home() {
 
       <div className={styles.vistaDato}>
         <div className={styles.datoFooter}></div>
-        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto} style={{fontSize:'35px'}}>Desde su fundación, hemos trabajado en una gran variedad de proyectos, desde pequeñas obras de construcción hasta grandes infraestructuras, nos comprometemos con la excelencia y la satisfacción del cliente. </h2> <br /> <h2 className={styles.introduccionTexto} style={{fontSize:'50px'}}>Juntos construimos el futuro</h2></div>
+        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto} style={{fontSize:'35px'}}> {texto1} </h2> <br /> <h2 className={styles.introduccionTexto} style={{fontSize:'50px'}}>{texto12}</h2></div>
       </div>
 
       <div className={styles.vista2}>
@@ -387,18 +412,20 @@ export default function Home() {
                 <div onMouseEnter={handleMouseEnterMail} onMouseLeave={handleMouseLeaveMail}>
                 {hoveredMail ? serviciosIconosHover[4] : serviciosIconos[4]}
                 </div>
-                <div onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>
+                <a target="_blank" href="https://maps.app.goo.gl/Pbncpnw84mA2HNGo9" rel="noopener noreferrer" onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>
                 {hoveredMap ? serviciosIconosHover[5] : serviciosIconos[5]}
-                </div>
+                </a>
                 
                 </div>
                 <div className={styles.horariosDia} style={{width:'30%'}}>
                   <h3 className={styles.horariosH3} style={{marginBottom:'4vh'}}>Email</h3>
-                  <h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap} className={`${styles.horariosH3} ${aleo.className}`}>Ubicacion</h3>
+                  <a target="_blank" href="https://maps.app.goo.gl/Pbncpnw84mA2HNGo9" rel="noopener noreferrer"></a><h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap} className={`${styles.horariosH3} ${aleo.className}`}>Ubicacion</h3>
                 </div>
                 <div className={styles.horariosHora} style={{width:'70%'}}>
                   <h3 style={{marginBottom:'4vh'}} >clientes@erigoingenieria.com</h3>
-                  <h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>Col. El Hato, Calle Principal Frente a MotoRepuestos</h3>
+                  <a target="_blank" href="https://maps.app.goo.gl/Pbncpnw84mA2HNGo9" rel="noopener noreferrer">
+                  <h3  onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>Col. El Hato, Calle Principal Frente a MotoRepuestos</h3>
+                  </a>
                 </div>
               </div>
             </div>
