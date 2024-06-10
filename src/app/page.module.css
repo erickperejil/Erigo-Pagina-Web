@@ -305,7 +305,7 @@
 
 
 .introduccionTexto{
-  text-align: center;
+  text-align: left;
   font-size: 50px;
   font-family: var(--font-aleo);
   letter-spacing: -2px;
