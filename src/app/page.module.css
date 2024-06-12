@@ -161,21 +161,25 @@
     }
   }
   
-  
-  
   .fondoFilter{
     height: 100%;
     width: 100%;
     background-color: #00112478;
   }
   
-  .mainFooter{
+  .mainFooter, .mainFooter2{
     position: absolute;
     bottom: -1%;
-    height: 10%;
+    height: 4%;
     width: 100%;
     background-color: #065569ff;
     clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
+  }
+
+  .mainFooter2{
+    bottom: -0.2%;
+    position: relative;
+    height: 2%;
   }
   
   .cardIntroduccion{
@@ -201,8 +205,7 @@
     }
   }
   
-  
-  .introduccionTexto{
+  .introduccionTexto, .introduccionTexto21{
     text-align: left;
     font-size: 4vh;
     font-family: var(--font-aleo);
@@ -212,12 +215,21 @@
   
   .introduccionTexto11{
     text-align: left;
-    font-size: 35px;
-    height: 50%;
-     width: 95%;
-     font-family: var(--font-aleo);
-     letter-spacing: -2px;
-     padding: 60px 5px;
+    font-size: 6vh;
+    font-family: var(--font-aleo);
+    letter-spacing: -2px;
+    padding: 0 5px;
+    height: 60%;
+    display: none;
+  }
+
+  .introduccionTexto12{
+    text-align: left;
+    font-size: 6vh;
+    font-family: var(--font-aleo);
+    letter-spacing: -2px;
+    padding: 0 5px;
+    height: 60%;
   }
 
   .introduccionFlecha{
@@ -226,8 +238,9 @@
     height: 10%;
     top: 46%;
     width: 6%;
-    display: flex;
+    display: none;
     flex-direction: row-reverse;
+    
   }
   
   .introduccionFlechaDerecha{
@@ -243,7 +256,6 @@
   .iconoFlecha{
     font-size: 20px;
   }
-  
   
   .texto{
     color: black;
@@ -276,13 +288,11 @@
   
   }
   
-  
   .tituloNav.scrolled {
     background-color: #ffffffe8;
     box-shadow: 2px -3px 20px #2f2e2e7a;
   }
-  
-  
+   
   .tituloLogo{
     width: 65px;
     height: 65px;
@@ -306,7 +316,6 @@
     color:#065569ff;
   }
   
-  
   .navSegmentos{
     height: 100%;
     width: 60%;
@@ -326,7 +335,6 @@
   
     
   }
-  
   
   .segmento:hover{
     background-color: rgba(255, 255, 255, 0.919);
@@ -367,14 +375,17 @@
   
   
   .vista2{
-    height: 100vh;
+    height: 400vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* border: 3px solid orange */
   }
   
   .vista2Titulo{
     /* border: 2px solid red; */
-    height: 10%;
+    height: 2.5%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -396,18 +407,18 @@
     /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 94%;
     justify-content: space-between;
   }
   
   .vista2ServiciosFila{
     /* border: 2px solid red; */
-    height: 75%;
+    height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     
   }
   
@@ -512,12 +523,13 @@
   }
   
   .servicioContenedor{
-    height: 100%;
-    width: 21%;
+    height: 26%;
+    width: 90%;
     display: flex;
     flex-direction: column-reverse;
     box-shadow: 5px 5px 20px #00000078;
     border-radius: 15px;
+    margin-bottom: 11%;
   }
   
   .iconoService{
@@ -538,11 +550,18 @@
   
   }
   
+  .introduccionTexto21{
+    font-size:4vh;
+    position: relative;
+    top: -9%
+  }
+
   .obrasCiviles{
     height: 420vh;
     width: 100%;
     /* border: 2px solid red; */
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
   }
   
@@ -673,17 +692,21 @@
     height: 60%;
     /* border: 2px solid steelblue; */
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
   }
   
   .horarios{
-   width: 50%;
+   width: 90%;
    height: 90%;
    /* border: 2px solid red; */
-   padding: 7vh 0vh 7vh 27vh;
+   padding: 4vh 0vh 4vh 0vh;
   
   }
   
+  .horariosh3footer{
+    font-weight: 400;
+  }
   .horariosFecha{
     /* border: 2px solid pink; */
     display: flex;
@@ -699,10 +722,10 @@
   }
   
   .info{
-    width: 50%;
+    width: 90%;
     height: 90%;
     /* border: 2px solid red; */
-    padding: 7vh 7vh;
+    padding: 4vh 0vh;
   }
   
   .horariosH2{
@@ -741,7 +764,13 @@
     position: relative;
     /*; cambiar a -7vh */
     top: -8vh;
-    display: flex;
+    display: none;
+  }
+
+  .h3Footer{
+    font-size: 2vh;
+    font-weight: 300;
+    text-align: center;
   }
   
   .paredIzq, .paredIzq2, .paredIzq3{
@@ -854,13 +883,7 @@
     justify-content: space-between;
     clip-path: polygon(49% 0, 51% 0, 51% 80%, 49% 80%)
   }
-  
-  .vista2{
-    display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  
+    
   .proyecto2{
     height: 100%;
     width: 49.4%;
@@ -955,6 +978,21 @@
 
 /* PC Desing */
 @media (min-width: 700px) {
+
+  .introduccionTexto12{
+    font-size:50px;
+    height:23%
+  }
+  .introduccionTexto11{
+    text-align: left;
+    font-size: 35px;
+    height: 50%;
+     width: 95%;
+     font-family: var(--font-aleo);
+     letter-spacing: -2px;
+     padding: 15px 5px;
+  }
+
   .vistaPrincipal{
     /* border: 2px solid red; */
     height: 100vh;
@@ -996,7 +1034,7 @@
     background-color: #00112478;
   }
   
-  .mainFooter{
+  .mainFooter, .mainFooter2{
     position: absolute;
     bottom: -1%;
     height: 10%;
@@ -1029,12 +1067,14 @@
   }
   
   
-  .introduccionTexto{
+  .introduccionTexto, .introduccionTexto12, .introduccionTexto21{
     text-align: left;
     font-size: 50px;
     font-family: var(--font-aleo);
     letter-spacing: -2px;
   }
+
+  
   
   .introduccionFlecha{
     position: absolute;

@@ -34,19 +34,19 @@ const servicios = [
 ]
 
 const serviciosIconos = [
-  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety}  style={{ color: "#065569" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting}  style={{ color: "#065569" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard}  style={{ color: "#065569" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck}  style={{ color: "#065569" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety}  style={{ color: "#065569", fontSize: '8vh' }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting}  style={{ color: "#065569", fontSize: '8vh'  }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard}  style={{ color: "#065569", fontSize: '8vh'  }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck}  style={{ color: "#065569", fontSize: '8vh'  }} />,
   <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} style={{marginBottom:'4vh'}}/>,
   <FontAwesomeIcon icon={faLocationDot} className={styles.iconosContactosIconos}/>
 ];
 
 const serviciosIconosHover = [
-  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#3491A8" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#3491A8" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#3491A8" }} />,
-  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#3491A8" }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faHelmetSafety} bounce style={{ color: "#3491A8", fontSize: '8vh' }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faCompassDrafting} bounce style={{ color: "#3491A8", fontSize: '8vh' }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faPersonChalkboard} bounce style={{ color: "#3491A8", fontSize: '8vh' }} />,
+  <FontAwesomeIcon className={styles.iconoService} icon={faClipboardCheck} bounce style={{ color: "#3491A8", fontSize: '8vh' }} />,
   <FontAwesomeIcon icon={faEnvelope} className={styles.iconosContactosIconos} bounce style={{marginBottom:'4vh'}}/>,
   <FontAwesomeIcon icon={faLocationDot} bounce className={styles.iconosContactosIconos}/>
 ];
@@ -110,7 +110,7 @@ export default function Home() {
     if (offset>400){
       setActivador(true);
     }
-    if (offset > 900) { // Puedes ajustar el valor según tus necesidades
+    if (offset > 900 && dispositivo<800) { // Puedes ajustar el valor según tus necesidades
       setScrolled(true);
       if(offset>1600){
         setSingleScrollState('scrolledObra1', true);
@@ -159,6 +159,9 @@ export default function Home() {
   const [activador, setActivador] = useState(false);
   
   const delay  = (ms:number) => new Promise(res => setTimeout(res, ms));
+
+  const dispositivo = window.screen.width;
+  console.log(dispositivo);
 
   useEffect(() => {
     if (activador) {
@@ -256,7 +259,7 @@ export default function Home() {
 
       <div className={styles.vistaDato}>
         <div className={styles.datoFooter}></div>
-        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto11}> {texto1} </h2> <br /> <h2 className={styles.introduccionTexto} style={{fontSize:'50px', height:'23%'}}>{textoImprimir11}</h2></div>
+        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto11}> {texto1} </h2> <br /> <h2 className={styles.introduccionTexto12}>{textoImprimir11}</h2></div>
       </div>
 
       <div className={styles.vista2}>
@@ -293,14 +296,14 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className={styles.mainFooter} style={{bottom:'-1%', position: 'relative'}}></div>
+          <div className={styles.mainFooter2}></div>
         </div>
         
       </div>
 
       <div className={styles.division2}>
       <div className={styles.datoFooter} style={{position: 'relative',top: '90%'}}></div>
-      <div className={styles.datoLeft}><h2 className={styles.introduccionTexto} style={{fontSize:'35px',    position: 'relative',top: '-9%'}}> Hemos trabajado en una variedad de proyectos, desde pequeñas infraestructuras hasta grandes proyectos urbanos e industriales, brindando soluciones integrales y personalizadas para cada cliente </h2> </div>
+      <div className={styles.datoLeft}><h2 className={styles.introduccionTexto21}> Hemos trabajado en una variedad de proyectos, desde pequeñas infraestructuras hasta grandes proyectos urbanos e industriales, brindando soluciones integrales y personalizadas para cada cliente </h2> </div>
       </div>
 
       <div className={styles.obrasCiviles}>
@@ -437,8 +440,8 @@ export default function Home() {
                   <h3 className={`${styles.horariosH3} ${aleo.className}`}>Sábados</h3>
                 </div>
                 <div className={styles.horariosHora}>
-                  <h3>8am - 5pm</h3>
-                  <h3>8am- 12pm</h3>
+                  <h3 className={styles.horariosh3footer}>8am - 5pm</h3>
+                  <h3 className={styles.horariosh3footer}>8am- 12pm</h3>
                 </div>
               </div>
 
@@ -460,9 +463,9 @@ export default function Home() {
                   <a target="_blank" href="https://maps.app.goo.gl/Pbncpnw84mA2HNGo9" rel="noopener noreferrer"></a><h3 onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap} className={`${styles.horariosH3} ${aleo.className}`}>Ubicacion</h3>
                 </div>
                 <div className={styles.horariosHora} style={{width:'70%'}}>
-                  <h3 style={{marginBottom:'4vh'}} >clientes@erigoingenieria.com</h3>
+                  <h3 className={styles.h3Footer} style={{marginBottom:'4vh'}} >clientes@erigoingenieria.com</h3>
                   <a target="_blank" href="https://maps.app.goo.gl/Pbncpnw84mA2HNGo9" rel="noopener noreferrer">
-                  <h3  onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>Col. El Hato, Calle Principal Frente a MotoRepuestos</h3>
+                  <h3  className={styles.h3Footer} onMouseEnter={handleMouseEnterMap} onMouseLeave={handleMouseLeaveMap}>Col. El Hato, Calle Principal Frente a MotoRepuestos</h3>
                   </a>
                 </div>
               </div>
