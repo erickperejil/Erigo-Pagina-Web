@@ -128,87 +128,808 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-  .content {
-    padding: 4rem;
+  .vistaPrincipal{
+    /* border: 2px solid red; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    
+  }
+  
+  .imagenFondo{
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid blue; */
+    background-image: url("/img/Vivienda_prefabricada.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-color: #004ea7;
+    animation: 10s 1 alternate fondoImagen;
+    
+  }
+  
+  @keyframes fondoImagen {
+    from {
+      background-position: bottom;
+    }
+    50% {
+      background-position: center
+    }
+    to {
+      background-position: bottom;
+    }
+  }
+  
+  
+  
+  .fondoFilter{
+    height: 100%;
+    width: 100%;
+    background-color: #00112478;
+  }
+  
+  .mainFooter{
+    position: absolute;
+    bottom: -1%;
+    height: 10%;
+    width: 100%;
+    background-color: #065569ff;
+    clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
+  }
+  
+  .cardIntroduccion{
+    width: 80%;
+    height: 60%;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    animation: 1.2s 1 alternate cardMove;
+    justify-content: center;
+  }
+  
+  @keyframes cardMove {
+    from {
+      top: 25%;
+    }
+    60% {
+      top: 15%;
+    }
+    to {
+      top: 20%;
+    }
+  }
+  
+  
+  .introduccionTexto{
+    text-align: left;
+    font-size: 4vh;
+    font-family: var(--font-aleo);
+    letter-spacing: -2px;
+    padding: 60px 5px;
+  }
+  
+  .introduccionTexto11{
+    text-align: left;
+    font-size: 35px;
+    height: 50%;
+     width: 95%;
+     font-family: var(--font-aleo);
+     letter-spacing: -2px;
+     padding: 60px 5px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
+  .introduccionFlecha{
+    position: absolute;
+    /* border: 2px solid red; */
+    height: 10%;
+    top: 46%;
+    width: 6%;
+    display: flex;
+    flex-direction: row-reverse;
   }
-
-  .card {
-    padding: 1rem 2.5rem;
+  
+  .introduccionFlechaDerecha{
+    position: absolute;
+    /* border: 2px solid red; */
+    height: 10%;
+    top: 46%;
+    width: 6%;
+    display: flex;
+    right: 0;
   }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
+  
+  .iconoFlecha{
+    font-size: 20px;
   }
-
-  .center {
-    padding: 8rem 0 6rem;
+  
+  
+  .texto{
+    color: black;
   }
-
-  .center::before {
-    transform: none;
-    height: 300px;
+  
+  .main{
+    /* border: 4px solid green; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
-
-  .description {
-    font-size: 0.8rem;
+  
+  .tituloNav{
+    height: 65px;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.194) 0%, rgba(255, 255, 255, 0.108) 50%, rgba(255,255,255,0) 100%);
+    padding: 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    overflow-y: hidden;
+    transition: background-color 0.5s ease;
+  
   }
-
-  .description a {
-    padding: 1rem;
+  
+  
+  .tituloNav.scrolled {
+    background-color: #ffffffe8;
+    box-shadow: 2px -3px 20px #2f2e2e7a;
   }
-
-  .description p,
-  .description div {
+  
+  
+  .tituloLogo{
+    width: 65px;
+    height: 65px;
+    margin:0;
+    /* border: 2px solid white; */
+    margin-left: 2%;
+  }
+  
+  .tituloTitulo{
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    transition: color 0.5s ease;
+  }
+  
+  .tituloTitulo.scrolled{
+    /* border: 2px solid red; */
+    color:#065569ff;
+  }
+  
+  
+  .navSegmentos{
+    height: 100%;
+    width: 60%;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .segmento{
+    width: 20%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    position: fixed;
+    align-items:center ;
+    transition: background-color 0.5s ease, color 0.2s ease, box-shadow 0.5s ease, margin 0.5s ease;
+  
+    
+  }
+  
+  
+  .segmento:hover{
+    background-color: rgba(255, 255, 255, 0.919);
+    color: #001124;
+    box-shadow: 2px 2px 2px rgb(195, 195, 195);
+    margin: 1px 0 0 -5px; 
+  }
+  
+  .segmento.scrolled:hover{
+    background-color:  rgba(255, 255, 255, 0.919);
+    color: white;
+    box-shadow: 2px 2px 2px rgb(195, 195, 195);
+    margin: 1px 0 0 -5px; 
+  }
+  
+  .segmentoTexto{
+    font-weight: 600;
+    text-align: center;
+    transition: color 0.5s ease;
+  }
+  
+  .segmentoTexto.scrolled{
+    color: #065569ff;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .erigoLogo{
+    height: 100%;
     width: 100%;
   }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
+  
+  .navBar{
+    height: 65px;
+    width: 100%;
+    /* border: 2px solid #EDAA25; */
   }
-
-  .description div {
+  
+  
+  .vista2{
+    height: 100vh;
+    width: 100%;
+    /* border: 3px solid orange */
+  }
+  
+  .vista2Titulo{
+    /* border: 2px solid red; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 4%;
+    position: relative;
+    top: 4%;
+  }
+  
+  .tituloVista2{
+   color: #065569ff;
+   font-size: 40px;
+   font-family: var(--font-aleo);
+   letter-spacing: -1px;
+   font-weight: bolder;
+  }
+  
+  .vista2Servicios{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+  }
+  
+  .vista2ServiciosFila{
+    /* border: 2px solid red; */
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+  }
+  
+  .servicioIcono{
+    width: 100%;
+    height: 20%;
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .vista2Servicio{
+    /* border: 2px solid rgb(0, 255, 115); */
+    height: 80%;
+    width: 100%;
+    display: flex;
+    border-radius: 15px;
+    
+  }
+  
+  .servicioImagen{
+    background-image: url("/img/Imagen1.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-color: #004ea7;
+    border-radius: 15px 15px 0 0;
+    
+  }
+  
+  .servicioImagenSombra{
+    height: 100%;
+    width: 100%;
+    background-color: #00112478;
+    display: flex;
     align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  
+  
+  
+  
+  .servicioDescripcion{
+    width: 100%;
+    background-color: #004ea70f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  
+  .descripcionH2{
+    color: #ffffff;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 1%;
+  }
+  
+  .descripcionH3{
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: 14px;
+    margin-right: 14px;
+    text-align: left;
+  }
+  
+  .vistaDato{
+    height: 60vh;
+    width: 100%;
+    /* border: 2px solid purple; */
+    background-color:#065569ff;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .datoFooter{
+    width: 100%;
+    height: 50px;
+    /* border: 2px solid black; */
+    clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
+    background-color: white;
+    position: absolute;
+    bottom: -61%;
+  }
+  
+  .datoLeft{
+    /* border: 2px solid gold;  */
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+  }
+  
+  .servicioContenedor{
+    height: 100%;
+    width: 21%;
+    display: flex;
+    flex-direction: column-reverse;
+    box-shadow: 5px 5px 20px #00000078;
+    border-radius: 15px;
+  }
+  
+  .iconoService{
+  height: 70%;
+  --fa-animation-iteration-count:1;
+  --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1;
+  }
+  
+  .iconoServiceBounce {
+    height: 70%;
+    --fa-animation-iteration-count:1;
+  }
+  
+  .division2{
+    height: 60vh;
+    width: 100%;
+    background-color: #065569ff;
+  
+  }
+  
+  .obrasCiviles{
+    height: 420vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .obraTipo{
+    height: 70vh;
+    width: 100%;
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: row;
+    transition: top 1s ease;
+  
+  }
+  
+  .obraTipo.scrolled{
+    height: 70vh;
+    width: 100%;
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .obraFilter{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: 300;
+    transition: background-color 2s ease;
+  }
+  
+  
+  .obraImagen{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid darkslategrey; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url(/img/rediseñoObras.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .obraImagenInverse{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid darkslategrey; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(/img/rediseñoObras.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1);
+    
+  }
+  
+  .obraDescripcion, .obraDescripcionInverse{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid seagreen; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .obraDescripcionInverse{
+    justify-content:start;
+    align-items: center;
+  }
+  
+  
+  .imagenEspacio, .imagenEspacioInverse{
+    clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
+    height: 90%;
+    width: 90%;
+    background-image: url(/img/Vivienda_prefabricada.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #001124;
+    overflow: hidden;
+  }
+  
+  .imagenEspacioInverse{
+      clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 88%);
+      border-radius: 0% 15% 15% 0%;
+  }
+  
+  .imagenEspacio{
+    clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
+    border-radius: 15% 0% 0 15%;
+  }
+  
+  .obraTexto{
+    width: 80%;
+    height: 70%;
+    /* border: 2px solid red; */
+  }
+  
+  .textoObraTitulo{
+    color: #065569ff;
+    height: 10%;
+    font-size: 4vh;
+  }
+  
+  .textoObraDescripcion{
+    color: #000000;
+    height: 90%;
+    padding-top: 25px;
+    font-size: 3vh;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+  }
+  
+  .contacto{
+    height: 80vh;
+    width: 100%;
+    /* border: 2px solid #001124; */
+    background-color: #065569ff;
+    z-index: 500;
+  }
+  
+  .contactoInfo{
+    width: 100%;
+    height: 60%;
+    /* border: 2px solid steelblue; */
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .horarios{
+   width: 50%;
+   height: 90%;
+   /* border: 2px solid red; */
+   padding: 7vh 0vh 7vh 27vh;
+  
+  }
+  
+  .horariosFecha{
+    /* border: 2px solid pink; */
+    display: flex;
+  }
+  
+  .horariosDia{
+    width: 50%;
+    /* border: 2px solid pink; */
+  }
+  .horariosHora{
+    width: 50%;
+    /* border: 2px solid pink; */
+  }
+  
+  .info{
+    width: 50%;
+    height: 90%;
+    /* border: 2px solid red; */
+    padding: 7vh 7vh;
+  }
+  
+  .horariosH2{
+    /* border: 2px solid blue; */
+    margin-bottom: 14px;
+  }
+  
+  .iconosContactos{
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .iconosContactosIconos{
+    font-size: 3.5vh;
+    
+  }
+  
+  .redesSociales{
+    width: 100%;
+    height: 40%;
+    /* border: 2px solid green; */
+  }
+  
+  .contenedorIcono{
+    /* border: 2px solid hotpink; */
+    height: 100%;
+    width:  9vh;
+    margin: 0 2px;
+  }
+  
+  .dibujoBonito{
+    /* border: 2px solid firebrick; */
+    height: 41vh;
+    width: 28%;
+    position: relative;
+    /*; cambiar a -7vh */
+    top: -8vh;
+    display: flex;
+  }
+  
+  .paredIzq, .paredIzq2, .paredIzq3{
+    height: 80%;
+    width: 60%;
+    background-color: #CFF5FF;
+    position: absolute;
+    bottom: 0;
+  
+  }
+  
+  .paredIzq{
+    clip-path: polygon(0 0, 75% 15%, 75% 100%, 0 85%);
+  }
+  
+  .paredIzq2{
+    clip-path: polygon(0 20%, 75% 35%, 75% 100%, 0 85%);
+    z-index: 1001;
+  }
+  
+  .paredIzq3{
+    clip-path: polygon(0 0, 75% 12%, 75% 100%, 0 85%);
+    height: 100%;
+  }
+  
+  .paredDer,.paredDer2,.paredDer3{
+    height: 80%;
+    width: 50%;
+    background-color: #3491A8;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+  }
+  .paredDer{
+    -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+    clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  }
+  
+  
+  .paredDer2{
+    -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+    clip-path: polygon(0 35%, 75% 22%, 75% 85%, 0 100%);
+    z-index: 1001;
+  }
+  
+  
+  .paredDer3{
+    clip-path: polygon(0 12%, 75% 1%, 75% 85%, 0 100%);
+    height: 100%;
+  }
+  
+  .techo,.techo2,.techo3{
+    height: 80%;
+    width: 109%;
+    background-color: #82D4E8;
+    position: absolute;
+    bottom: 69%;
+    z-index: 1000;
+  }
+  .techo{
+    clip-path:polygon(0 85%, 35% 73%, 75% 87%, 41% 100%);
+  }
+  
+  .techo2{
+    clip-path: polygon(0 85%, 35% 72%, 75% 87%, 41% 100%);
+    bottom: 53%;
+    z-index: 1001;
+  }
+  
+  .techo3{
+    clip-path:polygon(0 85%, 35% 73%, 75% 87%, 41% 100%);
+    z-index: 1000;
+    bottom: 89%;
+  }
+  
+  .wasapIcon{
+    width: 10%;
+    /* border: 2px solid blue; */
+    height: 9.6vh;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+  
+  
+  /* height: 31vh;
+  top: 0vh;
+  left: -18%; */
+  
+  /* Proyectos Segunda Pagina */
+  
+  .main2{
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+    height: 450vh;
+  }
+  
+  .cardIntroduccion2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .LineaTiempo2{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(146, 146, 146);
+    display: flex;
+    justify-content: space-between;
+    clip-path: polygon(49% 0, 51% 0, 51% 80%, 49% 80%)
+  }
+  
+  .vista2{
+    display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  .proyecto2{
+    height: 100%;
+    width: 49.4%;
+    background-color: white;
+    position: absolute;
+    height: 260vh;
+    top: 110vh;
+    z-index: 400;
+  }
+  
+  .proyectoHidder{
+    width: 100%;
+    height: 72vh;
+    background-color: #065569ff;
+    position: fixed;
+    z-index: 100;
+  }
+  
+  .historiaR{
+    border: 2px solid red;
+    height: 70vh;
+    width: 80%;
+  }
+  
+  .proyecto2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 0;
+  }
+  
+  .iconosLineaTiempo{
+    width: 5%;
+    height: 46vh;
+    /* border: 2px solid darkred; */
+    background-color: white;
+    position: absolute;
+    top: 110vh;
+    z-index: 400;
+    right: 47.5%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  
+  }
+  
+  .iconoTiempo{
+    height: 0vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid green; */
+  }
+  
+  .historiaRImagen{
+    border: 2px solid hotpink;
+    height: 90%;
+    width: 90%;
+    background-image: url("/img/HistoriaFormato.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-color: #004ea7;
   }
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
+
 
 @media (prefers-color-scheme: dark) {
   .vercelLogo {
@@ -230,789 +951,795 @@
 }
 
 
-.vistaPrincipal{
-  /* border: 2px solid red; */
-  height: 100vh;
-  width: 100%;
-  display: flex;
+
+
+/* PC Desing */
+@media (min-width: 700px) {
+  .vistaPrincipal{
+    /* border: 2px solid red; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    
+  }
   
-}
-
-.imagenFondo{
-  height: 100%;
-  width: 100%;
-  /* border: 2px solid blue; */
-  background-image: url("/img/Vivienda_prefabricada.jpg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; 
-  background-color: #004ea7;
-  animation: 10s 1 alternate fondoImagen;
+  .imagenFondo{
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid blue; */
+    background-image: url("/img/Vivienda_prefabricada.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-color: #004ea7;
+    animation: 10s 1 alternate fondoImagen;
+    
+  }
   
-}
-
-@keyframes fondoImagen {
-  from {
-    background-position: bottom;
+  @keyframes fondoImagen {
+    from {
+      background-position: bottom;
+    }
+    50% {
+      background-position: center
+    }
+    to {
+      background-position: bottom;
+    }
   }
-  50% {
-    background-position: center
+  
+  
+  
+  .fondoFilter{
+    height: 100%;
+    width: 100%;
+    background-color: #00112478;
   }
-  to {
-    background-position: bottom;
+  
+  .mainFooter{
+    position: absolute;
+    bottom: -1%;
+    height: 10%;
+    width: 100%;
+    background-color: #065569ff;
+    clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
   }
-}
-
-
-
-.fondoFilter{
-  height: 100%;
-  width: 100%;
-  background-color: #00112478;
-}
-
-.mainFooter{
-  position: absolute;
-  bottom: -1%;
-  height: 10%;
-  width: 100%;
-  background-color: #065569ff;
-  clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
-}
-
-.cardIntroduccion{
-  width: 80%;
-  height: 60%;
-  border-radius: 10px;
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  animation: 1.2s 1 alternate cardMove;
-  justify-content: center;
-}
-
-@keyframes cardMove {
-  from {
-    top: 25%;
-  }
-  60% {
-    top: 15%;
-  }
-  to {
+  
+  .cardIntroduccion{
+    width: 80%;
+    height: 60%;
+    border-radius: 10px;
+    position: absolute;
     top: 20%;
+    left: 10%;
+    animation: 1.2s 1 alternate cardMove;
+    justify-content: center;
   }
-}
-
-
-.introduccionTexto{
-  text-align: left;
-  font-size: 50px;
-  font-family: var(--font-aleo);
-  letter-spacing: -2px;
-}
-
-.introduccionFlecha{
-  position: absolute;
-  /* border: 2px solid red; */
-  height: 10%;
-  top: 46%;
-  width: 6%;
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.introduccionFlechaDerecha{
-  position: absolute;
-  /* border: 2px solid red; */
-  height: 10%;
-  top: 46%;
-  width: 6%;
-  display: flex;
-  right: 0;
-}
-
-.iconoFlecha{
-  font-size: 20px;
-}
-
-
-.texto{
-  color: black;
-}
-
-.main{
-  /* border: 4px solid green; */
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-.tituloNav{
-  height: 65px;
-  width: 100%;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.194) 0%, rgba(255, 255, 255, 0.108) 50%, rgba(255,255,255,0) 100%);
-  padding: 0;
-  display: flex;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  overflow-y: hidden;
-  transition: background-color 0.5s ease;
-
-}
-
-
-.tituloNav.scrolled {
-  background-color: #ffffffe8;
-  box-shadow: 2px -3px 20px #2f2e2e7a;
-}
-
-
-.tituloLogo{
-  width: 65px;
-  height: 65px;
-  margin:0;
-  /* border: 2px solid white; */
-  margin-left: 2%;
-}
-
-.tituloTitulo{
-  /* border: 2px solid red; */
-  height: 100%;
-  width: 30%;
-  display: flex;
-  align-items: center;
-  margin-left: 1%;
-  transition: color 0.5s ease;
-}
-
-.tituloTitulo.scrolled{
-  /* border: 2px solid red; */
-  color:#065569ff;
-}
-
-
-.navSegmentos{
-  height: 100%;
-  width: 60%;
-  /* border: 2px solid green; */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.segmento{
-  width: 20%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items:center ;
-  transition: background-color 0.5s ease, color 0.2s ease, box-shadow 0.5s ease, margin 0.5s ease;
-
   
-}
-
-
-.segmento:hover{
-  background-color: rgba(255, 255, 255, 0.919);
-  color: #001124;
-  box-shadow: 2px 2px 2px rgb(195, 195, 195);
-  margin: 1px 0 0 -5px; 
-}
-
-.segmento.scrolled:hover{
-  background-color:  rgba(255, 255, 255, 0.919);
-  color: white;
-  box-shadow: 2px 2px 2px rgb(195, 195, 195);
-  margin: 1px 0 0 -5px; 
-}
-
-.segmentoTexto{
-  font-weight: 600;
-  text-align: center;
-  transition: color 0.5s ease;
-}
-
-.segmentoTexto.scrolled{
-  color: #065569ff;
-  font-weight: 600;
-  text-align: center;
-}
-
-.erigoLogo{
-  height: 100%;
-  width: 100%;
-}
-
-.navBar{
-  height: 65px;
-  width: 100%;
-  /* border: 2px solid #EDAA25; */
-}
-
-
-.vista2{
-  height: 100vh;
-  width: 100%;
-  /* border: 3px solid orange */
-}
-
-.vista2Titulo{
-  /* border: 2px solid red; */
-  height: 10%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: 4%;
-  position: relative;
-  top: 4%;
-}
-
-.tituloVista2{
- color: #065569ff;
- font-size: 40px;
- font-family: var(--font-aleo);
- letter-spacing: -1px;
- font-weight: bolder;
-}
-
-.vista2Servicios{
-  /* border: 2px solid green; */
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  justify-content: space-between;
-}
-
-.vista2ServiciosFila{
-  /* border: 2px solid red; */
-  height: 75%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  @keyframes cardMove {
+    from {
+      top: 25%;
+    }
+    60% {
+      top: 15%;
+    }
+    to {
+      top: 20%;
+    }
+  }
   
-}
-
-.servicioIcono{
-  width: 100%;
-  height: 20%;
-  /* border: 2px solid greenyellow; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.vista2Servicio{
-  /* border: 2px solid rgb(0, 255, 115); */
-  height: 80%;
-  width: 100%;
-  display: flex;
-  border-radius: 15px;
   
-}
-
-.servicioImagen{
-  background-image: url("/img/Imagen1.jpg");
-  height: 100%;
-  width: 100%;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; 
-  background-color: #004ea7;
-  border-radius: 15px 15px 0 0;
+  .introduccionTexto{
+    text-align: left;
+    font-size: 50px;
+    font-family: var(--font-aleo);
+    letter-spacing: -2px;
+  }
   
-}
-
-.servicioImagenSombra{
-  height: 100%;
-  width: 100%;
-  background-color: #00112478;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  border-radius: 15px 15px 0 0;
-}
-
-
-
-
-
-.servicioDescripcion{
-  width: 100%;
-  background-color: #004ea70f;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-
-.descripcionH2{
-  color: #ffffff;
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 1%;
-}
-
-.descripcionH3{
-  color: #ffffff;
-  font-size: 14px;
-  margin-left: 14px;
-  margin-right: 14px;
-  text-align: left;
-}
-
-.vistaDato{
-  height: 60vh;
-  width: 100%;
-  /* border: 2px solid purple; */
-  background-color:#065569ff;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.datoFooter{
-  width: 100%;
-  height: 50px;
-  /* border: 2px solid black; */
-  clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
-  background-color: white;
-  position: absolute;
-  bottom: -61%;
-}
-
-.datoLeft{
-  /* border: 2px solid gold;  */
-  height: 80%;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 0%;
-}
-
-.servicioContenedor{
-  height: 100%;
-  width: 21%;
-  display: flex;
-  flex-direction: column-reverse;
-  box-shadow: 5px 5px 20px #00000078;
-  border-radius: 15px;
-}
-
-.iconoService{
-height: 70%;
---fa-animation-iteration-count:1;
---fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1;
-}
-
-.iconoServiceBounce {
+  .introduccionFlecha{
+    position: absolute;
+    /* border: 2px solid red; */
+    height: 10%;
+    top: 46%;
+    width: 6%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .introduccionFlechaDerecha{
+    position: absolute;
+    /* border: 2px solid red; */
+    height: 10%;
+    top: 46%;
+    width: 6%;
+    display: flex;
+    right: 0;
+  }
+  
+  .iconoFlecha{
+    font-size: 20px;
+  }
+  
+  
+  .texto{
+    color: black;
+  }
+  
+  .main{
+    /* border: 4px solid green; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  
+  .tituloNav{
+    height: 65px;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.194) 0%, rgba(255, 255, 255, 0.108) 50%, rgba(255,255,255,0) 100%);
+    padding: 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    overflow-y: hidden;
+    transition: background-color 0.5s ease;
+  
+  }
+  
+  
+  .tituloNav.scrolled {
+    background-color: #ffffffe8;
+    box-shadow: 2px -3px 20px #2f2e2e7a;
+  }
+  
+  
+  .tituloLogo{
+    width: 65px;
+    height: 65px;
+    margin:0;
+    /* border: 2px solid white; */
+    margin-left: 2%;
+  }
+  
+  .tituloTitulo{
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    transition: color 0.5s ease;
+  }
+  
+  .tituloTitulo.scrolled{
+    /* border: 2px solid red; */
+    color:#065569ff;
+  }
+  
+  
+  .navSegmentos{
+    height: 100%;
+    width: 60%;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .segmento{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    transition: background-color 0.5s ease, color 0.2s ease, box-shadow 0.5s ease, margin 0.5s ease;
+  
+    
+  }
+  
+  
+  .segmento:hover{
+    background-color: rgba(255, 255, 255, 0.919);
+    color: #001124;
+    box-shadow: 2px 2px 2px rgb(195, 195, 195);
+    margin: 1px 0 0 -5px; 
+  }
+  
+  .segmento.scrolled:hover{
+    background-color:  rgba(255, 255, 255, 0.919);
+    color: white;
+    box-shadow: 2px 2px 2px rgb(195, 195, 195);
+    margin: 1px 0 0 -5px; 
+  }
+  
+  .segmentoTexto{
+    font-weight: 600;
+    text-align: center;
+    transition: color 0.5s ease;
+  }
+  
+  .segmentoTexto.scrolled{
+    color: #065569ff;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .erigoLogo{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .navBar{
+    height: 65px;
+    width: 100%;
+    /* border: 2px solid #EDAA25; */
+  }
+  
+  
+  .vista2{
+    height: 100vh;
+    width: 100%;
+    /* border: 3px solid orange */
+  }
+  
+  .vista2Titulo{
+    /* border: 2px solid red; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 4%;
+    position: relative;
+    top: 4%;
+  }
+  
+  .tituloVista2{
+   color: #065569ff;
+   font-size: 40px;
+   font-family: var(--font-aleo);
+   letter-spacing: -1px;
+   font-weight: bolder;
+  }
+  
+  .vista2Servicios{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+  }
+  
+  .vista2ServiciosFila{
+    /* border: 2px solid red; */
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+  }
+  
+  .servicioIcono{
+    width: 100%;
+    height: 20%;
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .vista2Servicio{
+    /* border: 2px solid rgb(0, 255, 115); */
+    height: 80%;
+    width: 100%;
+    display: flex;
+    border-radius: 15px;
+    
+  }
+  
+  .servicioImagen{
+    background-image: url("/img/Imagen1.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-color: #004ea7;
+    border-radius: 15px 15px 0 0;
+    
+  }
+  
+  .servicioImagenSombra{
+    height: 100%;
+    width: 100%;
+    background-color: #00112478;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  
+  
+  
+  
+  .servicioDescripcion{
+    width: 100%;
+    background-color: #004ea70f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  
+  .descripcionH2{
+    color: #ffffff;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 1%;
+  }
+  
+  .descripcionH3{
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: 14px;
+    margin-right: 14px;
+    text-align: left;
+  }
+  
+  .vistaDato{
+    height: 60vh;
+    width: 100%;
+    /* border: 2px solid purple; */
+    background-color:#065569ff;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .datoFooter{
+    width: 100%;
+    height: 50px;
+    /* border: 2px solid black; */
+    clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
+    background-color: white;
+    position: absolute;
+    bottom: -61%;
+  }
+  
+  .datoLeft{
+    /* border: 2px solid gold;  */
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+  }
+  
+  .servicioContenedor{
+    height: 100%;
+    width: 21%;
+    display: flex;
+    flex-direction: column-reverse;
+    box-shadow: 5px 5px 20px #00000078;
+    border-radius: 15px;
+  }
+  
+  .iconoService{
   height: 70%;
   --fa-animation-iteration-count:1;
-}
-
-.division2{
-  height: 60vh;
-  width: 100%;
-  background-color: #065569ff;
-
-}
-
-.obrasCiviles{
-  height: 420vh;
-  width: 100%;
-  /* border: 2px solid red; */
-  display: flex;
-  flex-direction: column;
-}
-
-.obraTipo{
-  height: 70vh;
-  width: 100%;
-  /* border: 2px solid orange; */
-  display: flex;
-  flex-direction: row;
-  transition: top 1s ease;
-
-}
-
-.obraTipo.scrolled{
-  height: 70vh;
-  width: 100%;
-  /* border: 2px solid orange; */
-  display: flex;
-  flex-direction: row;
-}
-
-.obraFilter{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: white;
-  z-index: 300;
-  transition: background-color 2s ease;
-}
-
-
-.obraImagen{
-  width: 50%;
-  height: 100%;
-  /* border: 2px solid darkslategrey; */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-image: url(/img/rediseñoObras.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.obraImagenInverse{
-  width: 50%;
-  height: 100%;
-  /* border: 2px solid darkslategrey; */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-image: url(/img/rediseñoObras.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: scaleX(-1);
+  --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1;
+  }
   
-}
-
-.obraDescripcion, .obraDescripcionInverse{
-  width: 50%;
-  height: 100%;
-  /* border: 2px solid seagreen; */
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
-.obraDescripcionInverse{
-  justify-content:start;
-  align-items: center;
-}
-
-
-.imagenEspacio, .imagenEspacioInverse{
-  clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
-  height: 90%;
-  width: 90%;
-  background-image: url(/img/Vivienda_prefabricada.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #001124;
-  overflow: hidden;
-}
-
-.imagenEspacioInverse{
-    clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 88%);
-    border-radius: 0% 15% 15% 0%;
-}
-
-.imagenEspacio{
-  clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
-  border-radius: 15% 0% 0 15%;
-}
-
-.obraTexto{
-  width: 80%;
-  height: 70%;
-  /* border: 2px solid red; */
-}
-
-.textoObraTitulo{
-  color: #065569ff;
-  height: 10%;
-  font-size: 4vh;
-}
-
-.textoObraDescripcion{
-  color: #000000;
-  height: 90%;
-  padding-top: 25px;
-  font-size: 3vh;
-  letter-spacing: 0.4px;
-  font-weight: 400;
-}
-
-.contacto{
-  height: 80vh;
-  width: 100%;
-  /* border: 2px solid #001124; */
-  background-color: #065569ff;
-  z-index: 500;
-}
-
-.contactoInfo{
-  width: 100%;
-  height: 60%;
-  /* border: 2px solid steelblue; */
-  display: flex;
-  align-items: flex-end;
-}
-
-.horarios{
- width: 50%;
- height: 90%;
- /* border: 2px solid red; */
- padding: 7vh 0vh 7vh 27vh;
-
-}
-
-.horariosFecha{
-  /* border: 2px solid pink; */
-  display: flex;
-}
-
-.horariosDia{
-  width: 50%;
-  /* border: 2px solid pink; */
-}
-.horariosHora{
-  width: 50%;
-  /* border: 2px solid pink; */
-}
-
-.info{
-  width: 50%;
-  height: 90%;
-  /* border: 2px solid red; */
-  padding: 7vh 7vh;
-}
-
-.horariosH2{
-  /* border: 2px solid blue; */
-  margin-bottom: 14px;
-}
-
-.iconosContactos{
-  display: flex;
-  flex-direction: column;
-
-}
-
-.iconosContactosIconos{
-  font-size: 3.5vh;
+  .iconoServiceBounce {
+    height: 70%;
+    --fa-animation-iteration-count:1;
+  }
   
-}
-
-.redesSociales{
-  width: 100%;
-  height: 40%;
-  /* border: 2px solid green; */
-}
-
-.contenedorIcono{
-  /* border: 2px solid hotpink; */
-  height: 100%;
-  width:  9vh;
-  margin: 0 2px;
-}
-
-.dibujoBonito{
-  /* border: 2px solid firebrick; */
-  height: 41vh;
-  width: 28%;
-  position: relative;
-  /*; cambiar a -7vh */
-  top: -8vh;
-  display: flex;
-}
-
-.paredIzq, .paredIzq2, .paredIzq3{
-  height: 80%;
-  width: 60%;
-  background-color: #CFF5FF;
-  position: absolute;
-  bottom: 0;
-
-}
-
-.paredIzq{
-  clip-path: polygon(0 0, 75% 15%, 75% 100%, 0 85%);
-}
-
-.paredIzq2{
-  clip-path: polygon(0 20%, 75% 35%, 75% 100%, 0 85%);
-  z-index: 1001;
-}
-
-.paredIzq3{
-  clip-path: polygon(0 0, 75% 12%, 75% 100%, 0 85%);
-  height: 100%;
-}
-
-.paredDer,.paredDer2,.paredDer3{
-  height: 80%;
-  width: 50%;
-  background-color: #3491A8;
-  position: absolute;
-  bottom: 0;
-  left: 45%;
-}
-.paredDer{
-  -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
-  clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
-}
-
-
-.paredDer2{
-  -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
-  clip-path: polygon(0 35%, 75% 22%, 75% 85%, 0 100%);
-  z-index: 1001;
-}
-
-
-.paredDer3{
-  clip-path: polygon(0 12%, 75% 1%, 75% 85%, 0 100%);
-  height: 100%;
-}
-
-.techo,.techo2,.techo3{
-  height: 80%;
-  width: 109%;
-  background-color: #82D4E8;
-  position: absolute;
-  bottom: 69%;
-  z-index: 1000;
-}
-.techo{
-  clip-path:polygon(0 85%, 35% 73%, 75% 87%, 41% 100%);
-}
-
-.techo2{
-  clip-path: polygon(0 85%, 35% 72%, 75% 87%, 41% 100%);
-  bottom: 53%;
-  z-index: 1001;
-}
-
-.techo3{
-  clip-path:polygon(0 85%, 35% 73%, 75% 87%, 41% 100%);
-  z-index: 1000;
-  bottom: 89%;
-}
-
-.wasapIcon{
-  width: 10%;
-  /* border: 2px solid blue; */
-  height: 9.6vh;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-}
-
-
-/* height: 31vh;
-top: 0vh;
-left: -18%; */
-
-/* Proyectos Segunda Pagina */
-
-.main2{
-  background-color: white;
-  width: 100%;
-  overflow: hidden;
-  height: 450vh;
-}
-
-.cardIntroduccion2{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.LineaTiempo2{
-  height: 100%;
-  width: 100%;
-  background-color: rgb(146, 146, 146);
-  display: flex;
-  justify-content: space-between;
-  clip-path: polygon(49% 0, 51% 0, 51% 80%, 49% 80%)
-}
-
-.vista2{
-  display: flex;
+  .division2{
+    height: 60vh;
+    width: 100%;
+    background-color: #065569ff;
+  
+  }
+  
+  .obrasCiviles{
+    height: 420vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
     flex-direction: column;
+  }
+  
+  .obraTipo{
+    height: 70vh;
+    width: 100%;
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: row;
+    transition: top 1s ease;
+  
+  }
+  
+  .obraTipo.scrolled{
+    height: 70vh;
+    width: 100%;
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .obraFilter{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: 300;
+    transition: background-color 2s ease;
+  }
+  
+  
+  .obraImagen{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid darkslategrey; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url(/img/rediseñoObras.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .obraImagenInverse{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid darkslategrey; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(/img/rediseñoObras.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1);
+    
+  }
+  
+  .obraDescripcion, .obraDescripcionInverse{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid seagreen; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .obraDescripcionInverse{
+    justify-content:start;
+    align-items: center;
+  }
+  
+  
+  .imagenEspacio, .imagenEspacioInverse{
+    clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
+    height: 90%;
+    width: 90%;
+    background-image: url(/img/Vivienda_prefabricada.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #001124;
+    overflow: hidden;
+  }
+  
+  .imagenEspacioInverse{
+      clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 88%);
+      border-radius: 0% 15% 15% 0%;
+  }
+  
+  .imagenEspacio{
+    clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
+    border-radius: 15% 0% 0 15%;
+  }
+  
+  .obraTexto{
+    width: 80%;
+    height: 70%;
+    /* border: 2px solid red; */
+  }
+  
+  .textoObraTitulo{
+    color: #065569ff;
+    height: 10%;
+    font-size: 4vh;
+  }
+  
+  .textoObraDescripcion{
+    color: #000000;
+    height: 90%;
+    padding-top: 25px;
+    font-size: 3vh;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+  }
+  
+  .contacto{
+    height: 80vh;
+    width: 100%;
+    /* border: 2px solid #001124; */
+    background-color: #065569ff;
+    z-index: 500;
+  }
+  
+  .contactoInfo{
+    width: 100%;
+    height: 60%;
+    /* border: 2px solid steelblue; */
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .horarios{
+   width: 50%;
+   height: 90%;
+   /* border: 2px solid red; */
+   padding: 7vh 0vh 7vh 27vh;
+  
+  }
+  
+  .horariosFecha{
+    /* border: 2px solid pink; */
+    display: flex;
+  }
+  
+  .horariosDia{
+    width: 50%;
+    /* border: 2px solid pink; */
+  }
+  .horariosHora{
+    width: 50%;
+    /* border: 2px solid pink; */
+  }
+  
+  .info{
+    width: 50%;
+    height: 90%;
+    /* border: 2px solid red; */
+    padding: 7vh 7vh;
+  }
+  
+  .horariosH2{
+    /* border: 2px solid blue; */
+    margin-bottom: 14px;
+  }
+  
+  .iconosContactos{
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .iconosContactosIconos{
+    font-size: 3.5vh;
+    
+  }
+  
+  .redesSociales{
+    width: 100%;
+    height: 40%;
+    /* border: 2px solid green; */
+  }
+  
+  .contenedorIcono{
+    /* border: 2px solid hotpink; */
+    height: 100%;
+    width:  9vh;
+    margin: 0 2px;
+  }
+  
+  .dibujoBonito{
+    /* border: 2px solid firebrick; */
+    height: 41vh;
+    width: 28%;
+    position: relative;
+    /*; cambiar a -7vh */
+    top: -8vh;
+    display: flex;
+  }
+  
+  .paredIzq, .paredIzq2, .paredIzq3{
+    height: 80%;
+    width: 60%;
+    background-color: #CFF5FF;
+    position: absolute;
+    bottom: 0;
+  
+  }
+  
+  .paredIzq{
+    clip-path: polygon(0 0, 75% 15%, 75% 100%, 0 85%);
+  }
+  
+  .paredIzq2{
+    clip-path: polygon(0 20%, 75% 35%, 75% 100%, 0 85%);
+    z-index: 1001;
+  }
+  
+  .paredIzq3{
+    clip-path: polygon(0 0, 75% 12%, 75% 100%, 0 85%);
+    height: 100%;
+  }
+  
+  .paredDer,.paredDer2,.paredDer3{
+    height: 80%;
+    width: 50%;
+    background-color: #3491A8;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+  }
+  .paredDer{
+    -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+    clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+  }
+  
+  
+  .paredDer2{
+    -webkit-clip-path: polygon(0 15%, 75% 2%, 75% 85%, 0 100%);
+    clip-path: polygon(0 35%, 75% 22%, 75% 85%, 0 100%);
+    z-index: 1001;
+  }
+  
+  
+  .paredDer3{
+    clip-path: polygon(0 12%, 75% 1%, 75% 85%, 0 100%);
+    height: 100%;
+  }
+  
+  .techo,.techo2,.techo3{
+    height: 80%;
+    width: 109%;
+    background-color: #82D4E8;
+    position: absolute;
+    bottom: 69%;
+    z-index: 1000;
+  }
+  .techo{
+    clip-path:polygon(0 85%, 35% 73%, 75% 87%, 41% 100%);
+  }
+  
+  .techo2{
+    clip-path: polygon(0 85%, 35% 72%, 75% 87%, 41% 100%);
+    bottom: 53%;
+    z-index: 1001;
+  }
+  
+  .techo3{
+    clip-path:polygon(0 85%, 35% 73%, 75% 87%, 41% 100%);
+    z-index: 1000;
+    bottom: 89%;
+  }
+  
+  .wasapIcon{
+    width: 10%;
+    /* border: 2px solid blue; */
+    height: 9.6vh;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+  
+  
+  /* height: 31vh;
+  top: 0vh;
+  left: -18%; */
+  
+  /* Proyectos Segunda Pagina */
+  
+  .main2{
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+    height: 450vh;
+  }
+  
+  .cardIntroduccion2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .LineaTiempo2{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(146, 146, 146);
+    display: flex;
     justify-content: space-between;
-}
-
-.proyecto2{
-  height: 100%;
-  width: 49.4%;
-  background-color: white;
-  position: absolute;
-  height: 260vh;
-  top: 110vh;
-  z-index: 400;
-}
-
-.proyectoHidder{
-  width: 100%;
-  height: 72vh;
-  background-color: #065569ff;
-  position: fixed;
-  z-index: 100;
-}
-
-.historiaR{
-  border: 2px solid red;
-  height: 70vh;
-  width: 80%;
-}
-
-.proyecto2{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10vh 0;
-}
-
-.iconosLineaTiempo{
-  width: 5%;
-  height: 46vh;
-  /* border: 2px solid darkred; */
-  background-color: white;
-  position: absolute;
-  top: 110vh;
-  z-index: 400;
-  right: 47.5%;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-
-}
-
-.iconoTiempo{
-  height: 0vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 2px solid green; */
-}
-
-.historiaRImagen{
-  border: 2px solid hotpink;
-  height: 90%;
-  width: 90%;
-  background-image: url("/img/HistoriaFormato.png");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; 
-  background-color: #004ea7;
+    clip-path: polygon(49% 0, 51% 0, 51% 80%, 49% 80%)
+  }
+  
+  .vista2{
+    display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  .proyecto2{
+    height: 100%;
+    width: 49.4%;
+    background-color: white;
+    position: absolute;
+    height: 260vh;
+    top: 110vh;
+    z-index: 400;
+  }
+  
+  .proyectoHidder{
+    width: 100%;
+    height: 72vh;
+    background-color: #065569ff;
+    position: fixed;
+    z-index: 100;
+  }
+  
+  .historiaR{
+    border: 2px solid red;
+    height: 70vh;
+    width: 80%;
+  }
+  
+  .proyecto2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 0;
+  }
+  
+  .iconosLineaTiempo{
+    width: 5%;
+    height: 46vh;
+    /* border: 2px solid darkred; */
+    background-color: white;
+    position: absolute;
+    top: 110vh;
+    z-index: 400;
+    right: 47.5%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  
+  }
+  
+  .iconoTiempo{
+    height: 0vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid green; */
+  }
+  
+  .historiaRImagen{
+    border: 2px solid hotpink;
+    height: 90%;
+    width: 90%;
+    background-image: url("/img/HistoriaFormato.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-color: #004ea7;
+  }
 }

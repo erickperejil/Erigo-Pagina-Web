@@ -155,6 +155,7 @@ export default function Home() {
   const texto12 = "Juntos construimos el futuro";
 
   const [textoImprimir1, setTextoImprimir] = useState("".repeat(texto1.length))
+  const [textoImprimir11, setTextoImprimir11] = useState("".repeat(texto12.length))
   const [activador, setActivador] = useState(false);
   
   const delay  = (ms:number) => new Promise(res => setTimeout(res, ms));
@@ -162,7 +163,7 @@ export default function Home() {
   useEffect(() => {
     if (activador) {
       // Llama a tu función aquí
-      imprimirTexto();
+      imprimirTexto1Final();
     }
   }, [activador]);
 
@@ -174,14 +175,33 @@ export default function Home() {
     console.log('tamaño arreglo: texto1.charAt(index)',arregloPartido.length);
     for (let index = 0; index < texto1.length; index++) {
       arregloPartido[index] = texto1.charAt(index);
+
       setTextoImprimir(arregloPartido.join(""));
-      await delay(30); // 200ms, no 0.2
+      if(arregloPartido[index]==","){
+        await delay(200)
+      }
+      await delay(20); // 200ms, no 0.2
       console.log(textoImprimir1);
       // console.log(texto1.charAt(index));
     }
-    console.log('textoFinal:', textoImprimir1);
-    textoImprimir1.charAt(1);
+    await delay(1000);
+    imprimirTexto1Final();
+
+    // console.log('textoFinal:', textoImprimir1);
+    
   }
+
+  const imprimirTexto1Final = async () => {
+    const arregloPartido = textoImprimir11.split("");
+    for (let index = 0; index < texto12.length; index++) {
+      arregloPartido[index] = texto12.charAt(index);
+      setTextoImprimir11(arregloPartido.join(""));
+      await delay(80); // 200ms, no 0.2
+      console.log(textoImprimir11);
+      // console.log(texto1.charAt(index));
+    }
+  }
+
   
 
   return (
@@ -236,7 +256,7 @@ export default function Home() {
 
       <div className={styles.vistaDato}>
         <div className={styles.datoFooter}></div>
-        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto} style={{fontSize:'35px'}}> {textoImprimir1} </h2> <br /> <h2 className={styles.introduccionTexto} style={{fontSize:'50px'}}>{texto12}</h2></div>
+        <div className={styles.datoLeft}><h2 className={styles.introduccionTexto11}> {texto1} </h2> <br /> <h2 className={styles.introduccionTexto} style={{fontSize:'50px', height:'23%'}}>{textoImprimir11}</h2></div>
       </div>
 
       <div className={styles.vista2}>
