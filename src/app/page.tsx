@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { Aleo } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope,faLocationDot,faChevronLeft, faChevronRight,faHelmetSafety, faCompassDrafting,faClipboardCheck, faPersonChalkboard, faBars, faX, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation'
 import { text } from "stream/consumers";
@@ -52,11 +52,31 @@ const serviciosIconosHover = [
 ];
   
 
+
 export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const [hoveredMail, setHoveredMail] = useState(false);
   const [hoveredMap, setHoveredMap] = useState(false);
+
+  const[menu, setMenu] = useState(false);
+
+  const handleMenu = () => {
+    setMenu(!menu);
+    console.log(menu);
+  }
+
+
+  const[mobileService, setMobileService] = useState(0);
+
+
+  const handleMobileService = () => {
+    if(mobileService==2){
+      setMobileService(0)
+    }
+    else{setMobileService(mobileService+1);}
+    
+  }
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -111,9 +131,9 @@ export default function Home() {
     if (offset>400){
       setActivador(true);
     }
-    if (offset > 900 && dispositivo>800) { // Puedes ajustar el valor según tus necesidades
+    if (offset > 900) { // Puedes ajustar el valor según tus necesidades
       setScrolled(true);
-      if(offset>1600){
+      if(offset>1600  && dispositivo>800){
         setSingleScrollState('scrolledObra1', true);
         if(offset>2000){
           setSingleScrollState('scrolledObra2', true);
@@ -237,7 +257,29 @@ export default function Home() {
             <h4 className={`${styles.segmentoTexto} ${scrolled ? styles.scrolled : ''}`}>Contáctanos</h4>
           </div>
         </div>
+
+        <div className={styles.navSegmentosMobile} onClick={handleMenu}>
+        <FontAwesomeIcon icon={faBars} style={{color: scrolled ? '#065569': '#f0f0f0' , fontSize: '4vh'}} />
+        </div>
       </nav>
+
+      <div className={`${styles.filterMenu} ${menu? styles.scrolled : ''}`} style={{transition: 'right 1s ease'}}>
+      <div className={styles.menu}>
+          <div className={styles.divMenu} style={{display:'flex', flexDirection: 'row-reverse', border: 'none'}}>
+            <div className={styles.exitMenu} onClick={handleMenu}>
+            <FontAwesomeIcon icon={faXmark} style={{color: "#f0f0f0", fontSize: '5vh'}} />
+            </div>
+          </div>
+          <div className={styles.divMenu} onClick={() => router.push('/proyectos')}>
+            <h4>Nuestros Proyectos</h4>
+          </div>
+          <div className={styles.divMenu}>
+            <h4>Contactanos</h4>
+          </div>
+      </div>
+      </div>
+
+
 
       <section className={styles.vistaPrincipal}>
         <div className={styles.imagenFondo}>
@@ -307,6 +349,7 @@ export default function Home() {
       </div>
 
       <div className={styles.obrasCiviles}>
+
 
             <div className={`${styles.obraTipo} ${scrollStates.scrolledObra1 ? styles.scrolled : ''}`}
               style={{
@@ -426,6 +469,46 @@ export default function Home() {
 
                 </div>
             </div>
+            </div>
+
+      </div>
+
+      <div className={styles.obrasCivilesMobile} onClick={handleMobileService}>
+            <div className={`${styles.obraTipo} ${mobileService==0 ? styles.scrolled : ''}`} style={{transition : 'left 1s ease'}}>
+                    <div className={styles.obraDescripcion}>
+                      <div className={styles.obraTexto}>
+                        <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                        <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                      </div>
+                    </div>
+                    <div className={styles.obraImagen}>
+                    </div>
+            </div>
+
+
+            <div className={`${styles.obraTipo2} ${(mobileService==1) ? styles.scrolled : ''}`} style={{transition : 'left 1s ease'}}>
+                    <div className={styles.obraDescripcion}>
+                      <div className={styles.obraTexto}>
+                        <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                        <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                      </div>
+                    </div>
+                    <div className={styles.obraImagen}>
+                    </div>
+            </div>
+
+            <div className={`${styles.obraTipo2} ${(mobileService==2) ? styles.scrolled : ''}`} style={{transition : 'left 1s ease'}}>
+                    <div className={styles.obraDescripcion}>
+                      <div className={styles.obraTexto}>
+                        <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                        <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
+
+                      </div>
+                    </div>
+                    <div className={styles.obraImagen}>
+                    </div>
             </div>
 
       </div>
