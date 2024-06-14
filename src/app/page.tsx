@@ -107,10 +107,11 @@ export default function Home() {
 
   const handleScroll = () => {
     const offset = window.scrollY;
+    const dispositivo = window.screen.width;
     if (offset>400){
       setActivador(true);
     }
-    if (offset > 900 && dispositivo<800) { // Puedes ajustar el valor según tus necesidades
+    if (offset > 900 && dispositivo>800) { // Puedes ajustar el valor según tus necesidades
       setScrolled(true);
       if(offset>1600){
         setSingleScrollState('scrolledObra1', true);
@@ -160,8 +161,7 @@ export default function Home() {
   
   const delay  = (ms:number) => new Promise(res => setTimeout(res, ms));
 
-  const dispositivo = window.screen.width;
-  console.log(dispositivo);
+  
 
   useEffect(() => {
     if (activador) {
@@ -473,7 +473,7 @@ export default function Home() {
         </div>
 
         <div className={styles.redesSociales} style={{display:'flex'}}>
-            <div style={{width: '50%', height: '100%', display:'flex'}}>
+            <div  className={styles.contenedorVacio}>
               <div className={styles.dibujoBonito}>
                 <div className={styles.paredIzq}></div>
                 <div className={styles.techo}></div>
@@ -499,8 +499,8 @@ export default function Home() {
 
             </div>
 
-            <div style={{width: '50%', height:'100%',  display:'flex', alignItems:'flex-end'}}>
-              <div style={{width:'80%', height:'30%',  display:'flex',justifyContent: 'flex-end'}}>
+            <div className={styles.contenedorRedes}>
+              <div className={styles.contenedorRedesVacio}>
                 <div className={styles.contenedorIcono}>
                 <FontAwesomeIcon icon={faFacebookSquare} style={{height:'90%'}}/>
                 </div>
