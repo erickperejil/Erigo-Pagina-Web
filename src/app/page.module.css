@@ -199,24 +199,24 @@
     height: 100%;
     width: 100%;
     /* border: 2px solid blue; */
-    background-image: url("/img/Vivienda_prefabricada.jpg");
+    background-image: url("/img/Erigo1.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; 
     background-color: #004ea7;
-    animation: 10s 1 alternate fondoImagen;
+    animation: 10s 1 infinite fondoImagen;
     
   }
   
   @keyframes fondoImagen {
     from {
-      background-position: bottom;
+      background-position: center;
     }
     50% {
-      background-position: center
+      background-position: top;
     }
     to {
-      background-position: bottom;
+      background-position: center;
     }
   }
   
@@ -572,7 +572,7 @@
   
   .datoFooter{
     width: 100%;
-    height: 50px;
+    height: 10%;
     /* border: 2px solid black; */
     clip-path: polygon(100% 100%, 100% 100%, 10% 10%, -5% 100%, 100% 100%, 80% 80%, 100% 10%, 100% 100%);
     background-color: white;
@@ -695,6 +695,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 5%;
+    border-radius: 10px;
   }
   
   .obraImagenInverse{
@@ -730,7 +731,7 @@
     clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
     height: 90%;
     width: 90%;
-    background-image: url(/img/Vivienda_prefabricada.jpg);
+    background-image: url(/img/Erigo1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1009,7 +1010,7 @@
   }
   
   .historiaR{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 70vh;
     width: 80%;
   }
@@ -1046,7 +1047,7 @@
   }
   
   .historiaRImagen{
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
     height: 90%;
     width: 90%;
     background-image: url("/img/HistoriaFormato.png");
@@ -1120,7 +1121,7 @@
     height: 100%;
     width: 100%;
     /* border: 2px solid blue; */
-    background-image: url("/img/Vivienda_prefabricada.jpg");
+    background-image: url("/img/Erigo1.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; 
@@ -1134,10 +1135,10 @@
       background-position: bottom;
     }
     50% {
-      background-position: center
+      background-position: top;
     }
     to {
-      background-position: bottom;
+      background-position: center;
     }
   }
   
@@ -1602,7 +1603,7 @@
     clip-path: polygon(0 0%, 100% 12%, 100% 88%, 0% 100%);
     height: 90%;
     width: 90%;
-    background-image: url(/img/Vivienda_prefabricada.jpg);
+    background-image: url(/img/Erigo1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1880,7 +1881,7 @@
   }
   
   .historiaR{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 70vh;
     width: 80%;
   }
@@ -1917,7 +1918,7 @@
   }
   
   .historiaRImagen{
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
     height: 90%;
     width: 90%;
     background-image: url("/img/HistoriaFormato.png");

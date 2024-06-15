@@ -344,7 +344,7 @@ export default function Home() {
       </div>
 
       <div className={styles.division2}>
-      <div className={styles.datoFooter} style={{position: 'relative',top: '90%'}}></div>
+      <div className={styles.datoFooter} style={{position: 'relative',top: '91%'}}></div>
       <div className={styles.datoLeft}><h2 className={styles.introduccionTexto21}> Hemos trabajado en una variedad de proyectos, desde pequeñas infraestructuras hasta grandes proyectos urbanos e industriales, brindando soluciones integrales y personalizadas para cada cliente </h2> </div>
       </div>
 
@@ -364,7 +364,7 @@ export default function Home() {
 
                       </div>
                     </div>
-                    <div className={styles.obraImagen}>
+                    <div className={styles.obraImagen} style={{backgroundImage: 'url("/img/1.png")'}}>
                     </div>
                     <div className={styles.obraFilter} style={{
                       backgroundColor: scrollStates.scrolledObra1 ? 'transparent' : 'white'
@@ -380,11 +380,11 @@ export default function Home() {
                 <div className={styles.obraFilter} style={{
                   backgroundColor: scrollStates.scrolledObra2 ? 'transparent' : 'white'
                 }}></div>
-            <div className={styles.obraImagenInverse}>
+            <div className={styles.obraImagenInverse} style={{backgroundImage: 'url("/img/2.png")'}}>
             </div>
             <div className={styles.obraDescripcionInverse}>
                 <div className={styles.obraTexto}>
-                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraTitulo}>Apartamentos</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                 </div>
@@ -399,12 +399,12 @@ export default function Home() {
               >
               <div className={styles.obraDescripcion}>
                 <div className={styles.obraTexto}>
-                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraTitulo}>Agua y Saneamiento</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                 </div>
               </div>
-              <div className={styles.obraImagen}>
+              <div className={styles.obraImagen} style={{backgroundImage: 'url("/img/3.png")'}}>
               </div>
               <div className={styles.obraFilter} style={{
                 backgroundColor: scrollStates.scrolledObra3 ? 'transparent' : 'white'
@@ -420,11 +420,11 @@ export default function Home() {
             <div className={styles.obraFilter} style={{
               backgroundColor: scrollStates.scrolledObra4 ? 'transparent' : 'white'
             }}></div>
-            <div className={styles.obraImagenInverse}>
+            <div className={styles.obraImagenInverse} style={{backgroundImage: 'url("/img/4.png")'}}>
             </div>
             <div className={styles.obraDescripcionInverse}>
                 <div className={styles.obraTexto}>
-                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraTitulo}>Viviendas</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                 </div>
@@ -439,7 +439,7 @@ export default function Home() {
               >
               <div className={styles.obraDescripcion}>
                 <div className={styles.obraTexto}>
-                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraTitulo}>Titulo</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                 </div>
@@ -464,7 +464,7 @@ export default function Home() {
             </div>
             <div className={styles.obraDescripcionInverse}>
                 <div className={styles.obraTexto}>
-                  <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                  <h3 className={styles.textoObraTitulo}>Titulo</h3>
                   <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                 </div>
@@ -482,7 +482,7 @@ export default function Home() {
 
                       </div>
                     </div>
-                    <div className={styles.obraImagen}>
+                    <div className={styles.obraImagen} style={{backgroundImage: 'url("/img/obras2.jpg")'}}>
                     </div>
             </div>
 
@@ -490,24 +490,24 @@ export default function Home() {
             <div className={`${styles.obraTipo2} ${(mobileService==1) ? styles.scrolled : ''}`} style={{transition : 'left 1s ease'}}>
                     <div className={styles.obraDescripcion}>
                       <div className={styles.obraTexto}>
-                        <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                        <h3 className={styles.textoObraTitulo}>Viviendas</h3>
                         <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                       </div>
                     </div>
-                    <div className={styles.obraImagen}>
+                    <div className={styles.obraImagen} style={{backgroundImage: 'url("/img/obras3.jpg")'}}>
                     </div>
             </div>
 
             <div className={`${styles.obraTipo2} ${(mobileService==2) ? styles.scrolled : ''}`} style={{transition : 'left 1s ease'}}>
                     <div className={styles.obraDescripcion}>
                       <div className={styles.obraTexto}>
-                        <h3 className={styles.textoObraTitulo}>Obras Viales</h3>
+                        <h3 className={styles.textoObraTitulo}>Apartamentos</h3>
                         <h3 className={styles.textoObraDescripcion}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus at eaque ratione adipisci. Odit sapiente ducimus, aliquid voluptatum odio nesciunt? Est rem mollitia ab tenetur deserunt? Maiores odit ullam consectetur quas sapiente natus ad totam. Explicabo molestiae placeat ducimus? Officiis sint consectetur quaerat esse fuga architecto ullam tenetur totam ipsa!</h3>
 
                       </div>
                     </div>
-                    <div className={styles.obraImagen}>
+                    <div className={styles.obraImagen} style={{backgroundImage: 'url("/img/obras1.jpg")'}}>
                     </div>
             </div>
 
